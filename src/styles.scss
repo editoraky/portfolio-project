@@ -1,0 +1,147 @@
+// ==============================================
+// PORTFOLIO - HAUPTSTYLESHEET
+// ==============================================
+// Diese Datei importiert alle Teil-Stylesheets
+// und definiert globale Basis-Styles.
+// ==============================================
+
+
+// ==============================================
+// 1. IMPORTS (Reihenfolge ist wichtig!)
+// ==============================================
+
+// Variablen zuerst - alle anderen Dateien brauchen sie
+@use 'styles/variables' as *;
+
+// Mixins als zweites - Typography und Animations nutzen sie
+@use 'styles/mixins' as *;
+
+// Typography lädt auch die Google Fonts
+@use 'styles/typography';
+
+// Animationen zuletzt
+@use 'styles/animations';
+
+
+// Smooth Scrolling für die gesamte Seite
+html {
+  scroll-behavior: smooth;
+}
+
+// ==============================================
+// 2. CSS RESET
+// ==============================================
+// Entfernt Browser-Standardstyles für konsistentes Aussehen
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-background;
+  overflow-x: hidden;
+}
+
+// Listen ohne Punkte
+ul,
+ol {
+  list-style: none;
+}
+
+// Bilder responsive machen
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Buttons und Inputs erben Schriftart
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// Buttons: Pointer-Cursor (aus deiner Checkliste!)
+button {
+  cursor: pointer;
+}
+
+// Links: Keine Standard-Unterstreichung
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+// ==============================================
+// 3. UTILITY KLASSEN
+// ==============================================
+
+// Content-Container (max 1440px, zentriert)
+.container {
+  @include content-container;
+}
+
+// Volle Höhe (für Hero-Section)
+.full-height {
+  @include full-height;
+}
+
+// Flexbox Utilities
+.flex-center {
+  @include flex-center;
+}
+
+.flex-between {
+  @include flex-between;
+}
+
+.flex-column {
+  @include flex-column;
+}
+
+// Textausrichtung
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Sichtbarkeit
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+// Nur auf Mobile sichtbar
+.mobile-only {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+// Nur auf Desktop sichtbar
+.desktop-only {
+  @include tablet {
+    display: none !important;
+  }
+}
