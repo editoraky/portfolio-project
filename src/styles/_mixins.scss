@@ -1,0 +1,156 @@
+@use 'variables' as *;
+
+// ==============================================
+// FLEXBOX MIXINS
+// ==============================================
+
+// Zentriert Inhalt horizontal und vertikal
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Flexbox mit Abstand zwischen Elementen
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Flexbox-Spalte (Elemente untereinander)
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Flexbox-Spalte zentriert
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// ==============================================
+// RESPONSIVE MIXINS
+// ==============================================
+
+// Mobile-First: Ab dieser Breite gilt der Style
+@mixin breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Desktop-First: Bis zu dieser Breite gilt der Style
+@mixin breakpoint-down($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Spezifische Breakpoints für einfache Nutzung
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+
+// ==============================================
+// TYPOGRAFIE MIXINS
+// ==============================================
+
+// Überschriften-Stil (Syne, Extrabold)
+@mixin heading-style {
+  font-family: $font-heading;
+  font-weight: $font-weight-extrabold;
+  color: $color-text;
+  line-height: 1.1;
+}
+
+// Fließtext-Stil (Overpass, Regular)
+@mixin body-style {
+  font-family: $font-body;
+  font-weight: $font-weight-regular;
+  color: $color-text;
+  line-height: 1.6;
+}
+
+
+// ==============================================
+// BUTTON MIXINS
+// ==============================================
+
+// Basis-Button ohne Hintergrund
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all $transition-normal;
+}
+
+
+// ==============================================
+// LAYOUT MIXINS
+// ==============================================
+
+// Content-Container mit max-width
+@mixin content-container {
+  width: 100%;
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 0 $padding-horizontal;
+
+  @include tablet {
+    padding: 0 $padding-horizontal-mobile;
+  }
+}
+
+// Volle Viewport-Höhe (für Hero-Section)
+@mixin full-height {
+  min-height: 100vh;
+}
+
+
+// ==============================================
+// EFFEKTE MIXINS
+// ==============================================
+
+// Hover-Transition (aus deiner Checkliste: 75-125ms)
+@mixin hover-transition {
+  transition: all $transition-normal;
+
+  &:hover {
+    @content;
+  }
+}
+
+// Dezente Scroll-Animation
+@mixin scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
