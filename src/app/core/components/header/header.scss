@@ -1,0 +1,537 @@
+// ============================================
+// HEADER KOMPONENTE - STYLES
+// ============================================
+
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+
+// ============================================
+// HEADER (Hauptcontainer)
+// ============================================
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding-top: 16px;
+  background-color: $color-background;
+  z-index: 1000;
+
+  &__container {
+    @include flex-between;
+    height: 100%;
+  }
+}
+
+
+// ============================================
+// LOGO
+// ============================================
+
+.header__logo {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform $transition-normal;
+
+  &-text {
+    font-family: $font-heading;
+    font-weight: $font-weight-extrabold;
+    font-size: 32px;
+    color: $color-text;
+  }
+}
+
+.header__logo-img {
+  height: 64px;
+  width: auto;
+}
+
+
+// ============================================
+// NAVIGATION (Rechte Seite)
+// ============================================
+
+.header__nav {
+  @include flex-center;
+  gap: $spacing-lg;
+}
+
+
+// ============================================
+// SPRACHENWECHSEL - DESKTOP
+// ============================================
+
+.header__language {
+  gap: 7px;
+  @include flex-center;
+
+  @include tablet {
+    display: none;
+  }
+
+  &-btn {
+    @include button-base;
+    position: relative;
+    font-family: $font-body;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    padding: 4px 8px;
+    border: 2px solid transparent;
+    transition: all $transition-normal;
+
+    &.active {
+      font-weight: $font-weight-bold;
+      color: $color-text;
+      border: 2.5px solid $color-primary;
+      transform: translateY(1px)
+    }
+
+    &:not(.active) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 60%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: $color-text;
+        transition: width $transition-normal;
+      }
+
+      &:hover::after {
+        width: 50%;
+      }
+
+      &:active {
+        border: 2px solid $color-text;
+      }
+    }
+  }
+}
+
+
+// ============================================
+// SPRACHENWECHSEL - MOBILE (header içinde)
+// Sadece 768px altında ve menü açıkken görünür
+// ============================================
+
+.header__language-mobile {
+  display: none !important;  // Desktop'ta kesinlikle gizli
+  gap: 7px;
+
+  .header__language-btn {
+    @include button-base;
+    position: relative;
+    font-family: $font-body;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    padding: 4px 8px;
+    border: 2px solid transparent;
+    transition: all $transition-normal;
+
+    &.active {
+      font-weight: $font-weight-bold;
+      color: $color-text;
+      border: 2.5px solid $color-primary;
+      transform: translateY(1px)
+    }
+
+    &:not(.active) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 60%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: $color-text;
+        transition: width $transition-normal;
+      }
+
+      &:hover::after {
+        width: 50%;
+      }
+
+      &:active {
+        border: 2px solid $color-text;
+      }
+    }
+  }
+}
+
+// Mobile'da menü açıkken görünür
+@media (max-width: 768px) {
+  .header__language-mobile.visible {
+    display: flex !important;
+  }
+}
+
+
+// ============================================
+// HAMBURGER MENÜ BUTTON
+// ============================================
+
+.header__menu-btn {
+  @include button-base;
+  @include flex-column;
+  justify-content: center;
+  gap: 14px;
+  width: 64px;
+  height: 64px;
+  padding: $spacing-xs;
+}
+
+.header__menu-line {
+  display: block;
+  width: 42px;
+  height: 4px;
+  background-color: $color-text;
+  transition: transform $transition-normal, opacity $transition-normal;
+}
+
+.header__menu-btn.open {
+  .header__menu-line:nth-child(1) {
+    transform: translateY(16px) rotate(45deg);
+  }
+  .header__menu-line:nth-child(2) {
+    opacity: 0;
+  }
+  .header__menu-line:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg);
+  }
+}
+
+
+// ============================================
+// MOBILE NAVIGATION OVERLAY
+// ============================================
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-background;
+  z-index: 999;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Eski mobile-nav__language kaldırıldı - artık header içinde
+
+  &__content {
+    @include flex-column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-top: 10vh;
+    gap: clamp(32px, 5vw, 48px);
+  }
+
+  // ============================================
+  // MENÜ LINKS - DESKTOP
+  // ============================================
+  &__link {
+    position: relative;
+    font-family: $font-heading;
+    font-weight: 750;
+    font-size: clamp(40px, 12vw, 72px);
+    color: $color-text;
+    text-decoration: none;
+    padding: clamp(4px, 1vw, 8px) clamp(16px, 3vw, 40px);
+    width: clamp(300px, 70vw, 650px);
+    text-align: center;
+    white-space: nowrap;
+    transition: color $transition-normal;
+    -webkit-tap-highlight-color: transparent;
+
+    // L-FORM: Sol dikey çizgi
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5%;
+      bottom: 0;
+      width: clamp(2px, 0.5vw, 4px);
+      height: 40%;
+      background-color: $color-text;
+      transition: opacity 0.2s ease;
+    }
+
+    // L-FORM: Alt yatay çizgi
+    &::after {
+      content: '';
+      position: absolute;
+      left: -5%;
+      bottom: 0;
+      width: 10%;
+      height: clamp(2px, 0.5vw, 4px);
+      background-color: $color-text;
+    }
+
+    // HOVER - L kaybolur, çizgi animasyonu
+    &:hover::before {
+      opacity: 0;
+    }
+
+    &:hover::after {
+      animation: underlineSlide 0.8s ease-out forwards;
+    }
+
+    // DESKTOP ACTIVE (tıklama) - kare çerçeve
+    &:active {
+      outline: clamp(2px, 0.4vw, 3px) solid $color-text;
+      outline-offset: 0px;
+    }
+
+    &:active::before,
+    &:active::after {
+      opacity: 0;
+    }
+  }
+}
+
+// Desktop animasyon
+@keyframes underlineSlide {
+  0% {
+    width: 10%;
+    left: 2%;
+  }
+  50% {
+    width: 95%;
+    left: 2%;
+  }
+  100% {
+    width: 47%;
+    left: 50%;
+  }
+}
+
+
+// ============================================
+// CONTACT BAR
+// ============================================
+
+.mobile-nav__contact {
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  width: 100%;
+  height: auto;
+
+  &-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &-content {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: $max-content-width;
+    padding: 40px $padding-horizontal;
+    @include flex-between;
+    align-items: flex-end;
+  }
+
+  &-left {
+    @include flex-column;
+    gap: 2px;
+  }
+}
+
+.mobile-nav__sayhi {
+  cursor: default;
+  font-family: $font-heading;
+  font-weight: $font-weight-extrabold;
+  font-style: italic;
+  font-size: clamp(48px, 6vw, 72px);
+  color: white;
+  text-decoration: none;
+  transition: color $transition-normal;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.mobile-nav__email {
+  cursor: default;
+  font-family: $font-body;
+  font-size: $font-size-small;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-nav__contact-icons {
+  @include flex-center;
+  gap: 24px;
+}
+
+.mobile-nav__icon {
+  cursor: default;
+  transition: transform $transition-normal;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+
+// ============================================
+// ============================================
+// MOBILE STYLES (768px ve altı)
+// ============================================
+// ============================================
+
+@include tablet {
+  
+  .mobile-nav__contact {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
+    // Siyah arka plan görseli tam alta yapışsın
+    &-bg {
+      display: block;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &-content {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      padding: 60px $padding-horizontal-mobile 40px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0px;
+    }
+
+    .mobile-nav__icon {
+      display: none;
+    }
+  }
+
+  // Say hi! - daha büyük, renk JS ile değişecek
+  .mobile-nav__sayhi {
+    font-size: clamp(36px, 12vw, 48px);
+    color: $color-primary;
+    transition: color 0.3s ease;
+    
+    &.white {
+      color: white;
+    }
+  }
+
+  // Email - beyaz
+  .mobile-nav__email {
+    color: white;
+    font-size: clamp(16px, 4vw, 20px);
+    margin-top: -10px;
+  }
+
+  .mobile-nav__icon img {
+    filter: brightness(0);
+    width: 28px;
+    height: 28px;
+  }
+
+  // ============================================
+  // MOBILE LINK STYLES
+  // ============================================
+  .mobile-nav__content {
+    padding-top: 22vh !important;
+  }
+
+  .mobile-nav__link {
+    font-weight: $font-weight-bold;
+    padding: 2px 4px;
+
+    // L şekli pozisyonu
+    &::before {
+      left: -10px !important;
+      width: 5px !important; //dikey cizgi kalınlığı
+    }
+
+    &::after {
+      left: -10px !important;
+      width: 10% !important;
+      height: 5px !important; //yatay cizgi kalınlığı
+    }
+
+    // HOVER tamamen devre dışı
+    &:hover::before {
+      opacity: 1 !important;
+    }
+
+    &:hover::after {
+      animation: none !important;
+      width: 10% !important;
+      left: -10px !important;
+    }
+
+    // ACTIVE devre dışı
+    &:active {
+      outline: none !important;
+    }
+
+    &:active::before {
+      opacity: 1 !important;
+    }
+
+    &:active::after {
+      animation: none !important;
+    }
+
+    // CLICKED-FULL: Tam çizgi
+    &.clicked-full::before {
+      opacity: 0 !important;
+    }
+
+    &.clicked-full::after {
+      width: 100% !important;
+      left: 0 !important;
+      transition: all 0.15s ease-out !important;
+    }
+
+    // CLICKED-HALF: Sağ yarım
+    &.clicked-half::before {
+      opacity: 0 !important;
+    }
+
+    &.clicked-half::after {
+      width: 50% !important;
+      left: 50% !important;
+      transition: all 0.15s ease-out !important;
+    }
+  }
+}

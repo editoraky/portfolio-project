@@ -1,0 +1,110 @@
+<!--
+  HEADER KOMPONENTE
+  Sticky Header mit Logo, Sprachenwechsel und Navigation
+-->
+<header class="header">
+  <div class="header__container container">
+
+    <!-- Logo -->
+    <a routerLink="/" class="header__logo" aria-label="Zur Startseite">
+      <img src="assets/icons/ak-logo.svg" alt="AK Logo" class="header__logo-img">
+    </a>
+
+    <!-- Navigation -->
+    <nav class="header__nav">
+
+      <!-- Sprachenwechsel - Desktop -->
+      <div class="header__language">
+        <button
+          class="header__language-btn"
+          [class.active]="currentLanguage() === 'en'"
+          (click)="switchLanguage('en')"
+          aria-label="Switch to English">
+          EN
+        </button>
+        <button
+          class="header__language-btn"
+          [class.active]="currentLanguage() === 'de'"
+          (click)="switchLanguage('de')"
+          aria-label="Zu Deutsch wechseln">
+          DE
+        </button>
+      </div>
+
+      <!-- Sprachenwechsel - Mobile (menü açıkken görünür) -->
+      <div class="header__language-mobile" [class.visible]="isMenuOpen">
+        <button
+          class="header__language-btn"
+          [class.active]="currentLanguage() === 'en'"
+          (click)="switchLanguage('en')">
+          EN
+        </button>
+        <button
+          class="header__language-btn"
+          [class.active]="currentLanguage() === 'de'"
+          (click)="switchLanguage('de')">
+          DE
+        </button>
+      </div>
+
+      <!-- Hamburger Menü -->
+      <button
+        class="header__menu-btn"
+        [class.open]="isMenuOpen"
+        (click)="toggleMenu()"
+        aria-label="Menü öffnen">
+        <span class="header__menu-line"></span>
+        <span class="header__menu-line"></span>
+        <span class="header__menu-line"></span>
+      </button>
+
+    </nav>
+  </div>
+</header>
+
+<!--
+  MOBILE NAVIGATION OVERLAY
+-->
+<div class="mobile-nav" [class.open]="isMenuOpen">
+
+  <!-- Menü Links -->
+  <nav class="mobile-nav__content">
+    <a #aboutLink class="mobile-nav__link" href="#about" 
+       (touchstart)="onMobileLinkDown($event, aboutLink)" 
+       (touchend)="onMobileLinkUp($event, '#about')">About me</a>
+    <a #skillsLink class="mobile-nav__link" href="#skills" 
+       (touchstart)="onMobileLinkDown($event, skillsLink)" 
+       (touchend)="onMobileLinkUp($event, '#skills')">Skills</a>
+    <a #portfolioLink class="mobile-nav__link" href="#portfolio" 
+       (touchstart)="onMobileLinkDown($event, portfolioLink)" 
+       (touchend)="onMobileLinkUp($event, '#portfolio')">Portfolio</a>
+  </nav>
+
+  <!-- Contact Bar -->
+  <div class="mobile-nav__contact">
+    <img src="assets/icons/rectangle.svg" alt="" class="mobile-nav__contact-bg">
+
+    <div class="mobile-nav__contact-content">
+      <div class="mobile-nav__contact-left">
+        <a href="#contact" class="mobile-nav__sayhi" (click)="closeMenu()">
+          <span class="desktop-only">Say Hi!</span>
+          <span class="mobile-only">Say hi!</span>
+        </a>
+        <a href="mailto:your@email.com" class="mobile-nav__email">your&#64;email.com</a>
+      </div>
+
+      <div class="mobile-nav__contact-icons">
+        <a href="https://github.com/yourusername" target="_blank" class="mobile-nav__icon">
+          <img src="assets/icons/github.svg" alt="GitHub">
+        </a>
+        <a href="mailto:your@email.com" class="mobile-nav__icon">
+          <img src="assets/icons/email.svg" alt="Email">
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="mobile-nav__icon">
+          <img src="assets/icons/linkedin-white.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
