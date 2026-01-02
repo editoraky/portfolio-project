@@ -1,0 +1,242 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ============================================
+// HERO SECTION
+// ============================================
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: $color-background;
+  padding: 0 $padding-horizontal;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 0 $padding-horizontal-mobile;
+    padding-top: 30vh;
+    align-items: flex-start;
+  }
+
+  // ========================================
+  // INNER CONTAINER - Max-width sınırı
+  // ========================================
+  &__inner {
+    position: relative;
+    width: 100%;
+    max-width: $max-content-width;  // Content sınırı
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      align-items: flex-start;
+    }
+  }
+
+  // ========================================
+  // EMAIL - Inner'a göre konumlanır
+  // ========================================
+  &__email {
+    position: absolute;
+    left: 30px;           // Inner'ın sol kenarından
+    bottom: 10%;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    font-family: $font-body;
+    font-size: $font-size-body;
+    color: $color-text;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color $transition-normal;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    @include tablet {
+      left: 10px;
+      bottom:25%;
+      font-size: $font-size-small;
+      transform-origin: left bottom;
+    }
+
+    // Small mobile (480px ve altı)
+  @media (max-width: 480px) {
+    left: 5px;
+    bottom: 25%;
+    font-size: 12px;
+  }
+
+  // Extra small (375px ve altı)
+  @media (max-width: 375px) {
+    left: 3px;
+    bottom: 29%;
+    font-size: 11px;
+  }
+  }
+
+  // ========================================
+  // HAUPTINHALT - Container
+  // ========================================
+  &__content {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+
+     @include tablet {
+      text-align: right;
+      max-width: 100%;
+    }
+  }
+
+  // ========================================
+  // TITEL - Kleinbuchstaben (kein uppercase!)
+  // ========================================
+  &__title {
+    font-family: $font-heading;
+    font-weight: $font-weight-extrabold;
+    font-size: clamp(32px, 11vw, 120px);
+    line-height: 1;
+    color: $color-text;
+    letter-spacing: -0.02em;
+  }
+
+  &__title-line {
+    display: block;
+  }
+
+  // ========================================
+  // NAME WRAPPER - Linie + Name
+  // ========================================
+  &__name-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: $spacing-md;
+    gap: $spacing-md;
+    padding-right: 5%;
+
+    @include tablet {
+      justify-content: flex-start;
+      padding-right: 5%;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__line {
+    flex: 1;
+    height: 4px;
+    background-color: $color-text;
+    max-width: 64%;
+
+    @include tablet {
+      height: 3px;
+      margin-left: 30px;
+    }
+  }
+
+  &__name {
+    font-family: $font-body;
+    font-size: clamp(18px, 5vw, 42px);
+    font-weight: $font-weight-extrabold;
+    color: $color-primary;
+    white-space: nowrap;
+
+    @include tablet {
+      font-size: clamp(14px, 4vw, 22px);
+    }
+  }
+
+  // ========================================
+  // SCROLL DOWN - Rechts unten mit Animation
+  // ========================================
+  &__scroll {
+    position: absolute;
+    right: 20px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    @include tablet {
+      right: $padding-horizontal-mobile;
+      bottom: 100px;
+    }
+  }
+
+  // Unsichtbare Box für Pfeil
+  &__scroll-box {
+    width: 60px;
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    @include tablet {
+      width: 50px;
+      height: 150px;
+    }
+  }
+
+  // Animierter Pfeil (fließt nach unten)
+  &__scroll-arrow {
+    width: 50px;
+    height: auto;
+    animation: scrollArrowFlow 2s linear infinite;
+
+    @include tablet {
+      height: 100px;
+      width: 120px;
+    }
+  }
+
+  // Scroll Down Text SVG
+  &__scroll-text {
+    width: 45px;
+    height: auto;
+    animation: scrollTextPulse 2s ease-out infinite;
+
+    @include tablet {
+      width: 40px;
+      animation: none;
+    }
+  }
+}
+
+// ========================================
+// SCROLL ARROW ANIMATION
+// ========================================
+@keyframes scrollArrowFlow {
+  0% {
+    transform: translateY(-100px);
+  }
+  65% {
+    transform: translateY(280px);
+  }
+  65.1%, 100% {
+    transform: translateY(-100px);
+  }
+}
+
+// ========================================
+// SCROLL TEXT ANIMATION
+// ========================================
+@keyframes scrollTextPulse {
+  0%, 60% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(4px);
+  }
+  85%, 100% {
+    transform: translateX(0);
+  }
+}
