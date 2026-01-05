@@ -1,0 +1,57 @@
+<section class="about" id="about">
+
+  <!-- Content left -->
+  <div class="about__content">
+
+    <!-- About Me Header -->
+    <h2 class="about__title" [class.green]="isTitleGreen">About me</h2>
+
+    <div class="about__text-wrapper">
+
+      <!-- About me -->
+      <div class="about__description">
+        <p>
+          Write some information about yourself that is IT related. Why
+          are you passionate about coding? Show a desire to learn new
+          technologies.
+        </p>
+        <p>
+          Add a brief description of your problem-solving approach.
+          You can include some key traits like: analytical thinking,
+          creativity, persistence and collaboration.
+        </p>
+      </div>
+
+      <!-- Location & Remote Info -->
+      <div class="about__info">
+        <div class="about__info-item">
+          <img src="assets/icons/house.svg" alt="" class="about__info-icon">
+          <span>Based in Munich</span>
+        </div>
+        <div class="about__info-item">
+          <img src="assets/icons/laptop_chromebook.svg" alt="" class="about__info-icon">
+          <span>Open to work Remote</span>
+        </div>
+      </div>
+
+      <!-- Let's Talk Button -->
+      <a href="#contact" class="about__button">Let's talk</a>
+
+    </div>
+  </div>
+
+  <!-- right part photo -->
+  <div class="about__image-wrapper">
+    <div class="about__image-container">
+      <div class="about__image-frame" [class.visible]="isFrameVisible"></div>
+      <img src="assets/images/ak-square-bw.jpeg" alt="Akin Külhanbey" class="about__image">
+    </div>
+  </div>
+
+  <!-- Arrow -->
+  <a href="#skills" class="about__arrow">
+    <img src="assets/icons/arrow-left1.svg" alt="" class="about__arrow-1">
+    <img src="assets/icons/arrow-left2.svg" alt="" class="about__arrow-2">
+    <img src="assets/icons/arrow-left3.svg" alt="" class="about__arrow-3">
+  </a>
+</section>
