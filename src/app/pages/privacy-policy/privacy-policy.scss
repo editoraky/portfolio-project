@@ -1,0 +1,71 @@
+@use '../../../styles/variables' as *;
+
+.legal-notice {
+  padding: 120px $padding-horizontal 80px;
+  min-height: 100vh;
+  background-color: $color-background;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 100px $padding-horizontal-mobile 60px;
+  }
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 78px;
+    font-weight: $font-weight-extrabold;
+    color: $color-text;
+    margin-bottom: $spacing-xl;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 48px;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__section {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__heading {
+    font-family: $font-body;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-extrabold;
+    color: $color-primary;
+    margin-bottom: $spacing-sm;
+    line-height: 120%;
+  }
+
+  p {
+    font-family: $font-body;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    line-height: 120%;
+    margin-bottom: $spacing-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__link {
+    color: $color-primary;
+    text-decoration: none;
+    transition: opacity $transition-normal;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
