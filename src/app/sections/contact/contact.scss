@@ -126,13 +126,14 @@
     background: transparent;
     border: none;
     border-bottom: 1px solid $color-background;
-    padding: clamp(12px, 2vw, 16px) clamp(40px, 6vw, 50px) clamp(12px, 2vw, 16px) clamp(12px, 2vw, 16px);
+    padding: clamp(12px, 2vw, 16px) clamp(40px, 6vw, 50px) clamp(12px, 2vw, 16px)
+      clamp(12px, 2vw, 16px);
     font-family: $font-body;
     font-size: clamp(14px, 2vw, 16px);
     color: #ffffff;
     outline: none;
 
-     // Autofill stilini geçersiz kıl
+    // Autofill stilini geçersiz kıl
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
@@ -162,7 +163,7 @@
     &:focus + label,
     &.has-value + label {
       top: clamp(-8px, -1vw, -10px);
-      left:clamp(12px, 2vw, 16px);
+      left: clamp(12px, 2vw, 16px);
       font-size: clamp(10px, 1.5vw, 14px);
       background-color: $color-text;
       padding: 0 clamp(4px, 1vw, 8px);
@@ -211,21 +212,21 @@
   &.success {
     input,
     textarea {
-        border: none;
-        outline: clamp(2px, 0.4vw, 3px) solid $color-background;
-        outline-offset: clamp(-2px, -0.4vw, -3px);
-        background-color: #000000;
-        color: #ffffff;
+      border: none;
+      outline: clamp(2px, 0.4vw, 3px) solid $color-background;
+      outline-offset: clamp(-2px, -0.4vw, -3px);
+      background-color: #000000;
+      color: #ffffff;
 
-        // Tarayıcı autofill stilini geçersiz kıl
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus,
-    &:-webkit-autofill:active {
-      -webkit-box-shadow: 0 0 0 1000px #000000 inset !important;
-      -webkit-text-fill-color: #ffffff !important;
-      transition: background-color 5000s ease-in-out 0s;
-        }
+      // Tarayıcı autofill stilini geçersiz kıl
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 1000px #000000 inset !important;
+        -webkit-text-fill-color: #ffffff !important;
+        transition: background-color 5000s ease-in-out 0s;
+      }
     }
 
     input:hover,
@@ -252,7 +253,7 @@
 }
 
 // ============================================
-// INPUT ICONS
+// INPUT icon
 // ============================================
 
 .contact__input-icon {
@@ -404,31 +405,30 @@
   }
 }
 
-
 // ============================================
 // MOBILE RESPONSIVE (768px altı için ek ayarlar)
 // ============================================
 
 @media (max-width: 768px) {
-
   .contact__title {
     animation: blink 2.5s ease-in-out infinite;
   }
   @keyframes blink {
     0% {
-      color: $color-primary;  // Yeşil başla
+      color: $color-primary; // Yeşil başla
     }
-    60% {  // 1500ms / 2500ms = %60
-      color: $color-primary;  // Yeşil devam
+    60% {
+      // 1500ms / 2500ms = %60
+      color: $color-primary; // Yeşil devam
     }
     60.1% {
-      color: $color-background;  // Beyaz/krem geçiş
+      color: $color-background; // Beyaz/krem geçiş
     }
-    100% {  // 1000ms beyaz
+    100% {
+      // 1000ms beyaz
       color: $color-background;
     }
   }
-
 
   // Mobile'da input hover çerçeve yok
   .contact__input-group {
@@ -443,7 +443,7 @@
       outline: 4px solid $color-background;
       outline-offset: -4px;
     }
-    
+
     &.success input:hover,
     &.success textarea:hover {
       outline: 3px solid $color-background;
@@ -460,15 +460,15 @@
   }
 
   .contact__form-title {
-    font-size: clamp(24px, 7vw, 32px);  // Daha büyük
+    font-size: clamp(24px, 7vw, 32px); // Daha büyük
     text-align: center;
   }
 
   .contact__form-subtitle {
-    font-size: clamp(16px, 5vw, 22px);  // Daha büyük
+    font-size: clamp(16px, 5vw, 22px); // Daha büyük
     text-align: center;
   }
-  
+
   .contact__submit-btn {
     width: 50%;
     padding: 10px 16px;
@@ -483,7 +483,6 @@
       }
     }
   }
-   
 
   .contact__arrow {
     margin-top: $spacing-lg;

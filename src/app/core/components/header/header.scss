@@ -5,7 +5,6 @@
 @use '../../../../styles/variables' as *;
 @use '../../../../styles/mixins' as *;
 
-
 // ============================================
 // HEADER (Hauptcontainer)
 // ============================================
@@ -25,7 +24,6 @@
     height: 100%;
   }
 }
-
 
 // ============================================
 // LOGO
@@ -49,7 +47,6 @@
   width: auto;
 }
 
-
 // ============================================
 // NAVIGATION (Rechte Seite)
 // ============================================
@@ -58,7 +55,6 @@
   @include flex-center;
   gap: $spacing-lg;
 }
-
 
 // ============================================
 // SPRACHENWECHSEL - DESKTOP
@@ -87,7 +83,7 @@
       font-weight: $font-weight-bold;
       color: $color-text;
       border: 2.5px solid $color-primary;
-      transform: translateY(1px)
+      transform: translateY(1px);
     }
 
     &:not(.active) {
@@ -114,14 +110,13 @@
   }
 }
 
-
 // ============================================
 // SPRACHENWECHSEL - MOBILE (header içinde)
 // Sadece 768px altında ve menü açıkken görünür
 // ============================================
 
 .header__language-mobile {
-  display: none !important;  // Desktop'ta kesinlikle gizli
+  display: none !important; // Desktop'ta kesinlikle gizli
   gap: 7px;
 
   .header__language-btn {
@@ -139,7 +134,7 @@
       font-weight: $font-weight-bold;
       color: $color-text;
       border: 2.5px solid $color-primary;
-      transform: translateY(1px)
+      transform: translateY(1px);
     }
 
     &:not(.active) {
@@ -173,7 +168,6 @@
   }
 }
 
-
 // ============================================
 // HAMBURGER MENÜ BUTTON
 // ============================================
@@ -193,7 +187,9 @@
   width: 42px;
   height: 4px;
   background-color: $color-text;
-  transition: transform $transition-normal, opacity $transition-normal;
+  transition:
+    transform $transition-normal,
+    opacity $transition-normal;
 }
 
 .header__menu-btn.open {
@@ -207,7 +203,6 @@
     transform: translateY(-16px) rotate(-45deg);
   }
 }
-
 
 // ============================================
 // MOBILE NAVIGATION OVERLAY
@@ -224,7 +219,9 @@
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 
   &.open {
     opacity: 1;
@@ -320,7 +317,6 @@
   }
 }
 
-
 // ============================================
 // CONTACT BAR
 // ============================================
@@ -379,7 +375,7 @@
   text-decoration: none;
 }
 
-.mobile-nav__contact-icons {
+.mobile-nav__contact-icon {
   @include flex-center;
   gap: 24px;
 }
@@ -398,7 +394,6 @@
   }
 }
 
-
 // ============================================
 // ============================================
 // MOBILE STYLES (768px ve altı)
@@ -406,7 +401,6 @@
 // ============================================
 
 @include tablet {
-  
   .mobile-nav__contact {
     position: absolute;
     bottom: 0;
@@ -446,7 +440,7 @@
     font-size: clamp(36px, 12vw, 48px);
     color: $color-primary;
     transition: color 0.3s ease;
-    
+
     &.white {
       color: white;
     }

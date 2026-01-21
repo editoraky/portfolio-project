@@ -28,7 +28,8 @@
 
 // Pfeil-Animation (auf und ab)
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -38,14 +39,14 @@
 
 // Sanftes Pulsieren (für Hover-Hinweise)
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.05);
   }
 }
-
 
 // ==============================================
 // SCROLL-ANIMATIONEN (Klassen)
@@ -55,7 +56,9 @@
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 // Wenn Element sichtbar wird (via JavaScript)
@@ -77,14 +80,15 @@
   transition-delay: 0.3s;
 }
 
-
 // ==============================================
 // HOVER-ANIMATIONEN
 // ==============================================
 
 // Button-Hover (dezent, 125ms)
 .hover-lift {
-  transition: transform $transition-normal, box-shadow $transition-normal;
+  transition:
+    transform $transition-normal,
+    box-shadow $transition-normal;
 
   &:hover {
     transform: translateY(-3px);
@@ -125,7 +129,6 @@
   }
 }
 
-
 // ==============================================
 // SPEZIELLE ELEMENT-ANIMATIONEN
 // ==============================================
@@ -140,7 +143,7 @@
   animation: fadeInUp 0.8s ease forwards;
 }
 
-// Gestaffelte Animation für Skill-Icons
+// Gestaffelte Animation für Skill-icon
 .skill-icon {
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
@@ -151,7 +154,6 @@
     }
   }
 }
-
 
 // ==============================================
 // ÜBERGANGS-UTILITIES

@@ -2,15 +2,13 @@
      CONTACT SECTION
      ============================================ -->
 <section class="contact" id="contact">
-
   <!-- Siyah Arka Plan SVG -->
   <div class="contact__background">
-    <img src="assets/icons/hintergrund-contact.svg" alt="" class="contact__bg-image">
+    <img src="assets/icon/hintergrund-contact.svg" alt="" class="contact__bg-image" />
   </div>
 
   <div class="container">
     <div class="contact__content">
-
       <!-- Sol Taraf - Başlık -->
       <div class="contact__header">
         <h2 class="contact__title">{{ contactTitle }}</h2>
@@ -22,7 +20,6 @@
         <p class="contact__form-subtitle">{{ texts().contact.formSubtitle }}</p>
 
         <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-
           <!-- Name Input -->
           <div class="contact__input-group" [class.error]="nameError" [class.success]="nameSuccess">
             <input
@@ -34,19 +31,25 @@
               (blur)="onBlur('name')"
               [class.has-value]="formData.name"
               required
-            >
+            />
             <label for="name">{{ texts().contact.labelName }}</label>
             <span class="contact__input-icon contact__input-icon--error" *ngIf="nameError">
-              <img src="assets/icons/error.svg" alt="Error">
+              <img src="assets/icon/error.svg" alt="Error" />
             </span>
             <span class="contact__input-icon contact__input-icon--success" *ngIf="nameSuccess">
-              <img src="assets/icons/done.svg" alt="Success">
+              <img src="assets/icon/done.svg" alt="Success" />
             </span>
-            <span class="contact__error-message" *ngIf="nameError">{{ texts().contact.errorName }}</span>
+            <span class="contact__error-message" *ngIf="nameError">{{
+              texts().contact.errorName
+            }}</span>
           </div>
 
           <!-- Email Input -->
-          <div class="contact__input-group" [class.error]="emailError" [class.success]="emailSuccess">
+          <div
+            class="contact__input-group"
+            [class.error]="emailError"
+            [class.success]="emailSuccess"
+          >
             <input
               type="email"
               id="email"
@@ -56,19 +59,25 @@
               (blur)="onBlur('email')"
               [class.has-value]="formData.email"
               required
-            >
+            />
             <label for="email">{{ texts().contact.labelEmail }}</label>
             <span class="contact__input-icon contact__input-icon--error" *ngIf="emailError">
-              <img src="assets/icons/error.svg" alt="Error">
+              <img src="assets/icon/error.svg" alt="Error" />
             </span>
             <span class="contact__input-icon contact__input-icon--success" *ngIf="emailSuccess">
-              <img src="assets/icons/done.svg" alt="Success">
+              <img src="assets/icon/done.svg" alt="Success" />
             </span>
-            <span class="contact__error-message" *ngIf="emailError">{{ texts().contact.errorEmail }}</span>
+            <span class="contact__error-message" *ngIf="emailError">{{
+              texts().contact.errorEmail
+            }}</span>
           </div>
 
           <!-- Message Textarea -->
-          <div class="contact__input-group contact__input-group--textarea" [class.error]="messageError" [class.success]="messageSuccess">
+          <div
+            class="contact__input-group contact__input-group--textarea"
+            [class.error]="messageError"
+            [class.success]="messageSuccess"
+          >
             <textarea
               id="message"
               name="message"
@@ -81,46 +90,74 @@
             ></textarea>
             <label for="message">{{ texts().contact.labelMessage }}</label>
             <span class="contact__input-icon contact__input-icon--error" *ngIf="messageError">
-              <img src="assets/icons/error.svg" alt="Error">
+              <img src="assets/icon/error.svg" alt="Error" />
             </span>
             <span class="contact__input-icon contact__input-icon--success" *ngIf="messageSuccess">
-              <img src="assets/icons/done.svg" alt="Success">
+              <img src="assets/icon/done.svg" alt="Success" />
             </span>
-            <span class="contact__error-message" *ngIf="messageError">{{ texts().contact.errorMessage }}</span>
+            <span class="contact__error-message" *ngIf="messageError">{{
+              texts().contact.errorMessage
+            }}</span>
           </div>
 
           <!-- Privacy Checkbox -->
-<div class="contact__checkbox-group" [class.error]="privacyError" [class.checked]="formData.privacy">
-  <div class="contact__checkbox"
-    (click)="togglePrivacy()"
-    (mouseenter)="onCheckboxHover(true)"
-    (mouseleave)="onCheckboxHover(false)">
-    <img *ngIf="!formData.privacy && !privacyHover" src="assets/icons/checkbox-1.svg" alt="">
-    <img *ngIf="!formData.privacy && privacyHover" src="assets/icons/checkbox-1-hover.svg" alt="">
-    <img *ngIf="formData.privacy && !privacyHover" src="assets/icons/checkbox-3-checked.svg" alt="">
-    <img *ngIf="formData.privacy && privacyHover" src="assets/icons/checkbox-checked-hover.svg" alt="">
-  </div>
-  <label (click)="togglePrivacy()">
-    {{ texts().contact.privacyText1 }}<a routerLink="/privacy-policy" class="contact__privacy-link" (click)="$event.stopPropagation()">{{ texts().contact.privacyLink }}</a>{{ texts().contact.privacyText2 }}
-  </label>
-  <span class="contact__error-message" *ngIf="privacyError">{{ texts().contact.errorPrivacy }}</span>
-</div>
+          <div
+            class="contact__checkbox-group"
+            [class.error]="privacyError"
+            [class.checked]="formData.privacy"
+          >
+            <div
+              class="contact__checkbox"
+              (click)="togglePrivacy()"
+              (mouseenter)="onCheckboxHover(true)"
+              (mouseleave)="onCheckboxHover(false)"
+            >
+              <img
+                *ngIf="!formData.privacy && !privacyHover"
+                src="assets/icon/checkbox-1.svg"
+                alt=""
+              />
+              <img
+                *ngIf="!formData.privacy && privacyHover"
+                src="assets/icon/checkbox-1-hover.svg"
+                alt=""
+              />
+              <img
+                *ngIf="formData.privacy && !privacyHover"
+                src="assets/icon/checkbox-3-checked.svg"
+                alt=""
+              />
+              <img
+                *ngIf="formData.privacy && privacyHover"
+                src="assets/icon/checkbox-checked-hover.svg"
+                alt=""
+              />
+            </div>
+            <label (click)="togglePrivacy()">
+              {{ texts().contact.privacyText1
+              }}<a
+                routerLink="/privacy-policy"
+                class="contact__privacy-link"
+                (click)="$event.stopPropagation()"
+                >{{ texts().contact.privacyLink }}</a
+              >{{ texts().contact.privacyText2 }}
+            </label>
+            <span class="contact__error-message" *ngIf="privacyError">{{
+              texts().contact.errorPrivacy
+            }}</span>
+          </div>
 
-         <!-- Submit Button -->
-        <button type="submit" class="contact__submit-btn"[class.active]="isFormValid">
-              {{ submitButtonText }}
-        </button>
-
+          <!-- Submit Button -->
+          <button type="submit" class="contact__submit-btn" [class.active]="isFormValid">
+            {{ submitButtonText }}
+          </button>
         </form>
       </div>
-
     </div>
 
     <!-- Yukarı Ok -->
     <a href="#hero" class="contact__arrow">
-      <img src="assets/icons/pfeile-contact.svg" alt="Back to top" class="contact__arrow-icon">
+      <img src="assets/icon/pfeile-contact.svg" alt="Back to top" class="contact__arrow-icon" />
     </a>
-
   </div>
-
 </section>

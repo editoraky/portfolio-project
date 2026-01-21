@@ -1,15 +1,12 @@
 <section class="about" id="about">
-
   <!-- Content left -->
   <div class="about__content">
-
     <!-- About Me Header -->
     <h2 class="about__title" [class.green]="isTitleGreen">
       {{ texts().about.title }}
     </h2>
 
     <div class="about__text-wrapper">
-
       <!-- About me -->
       <div class="about__description">
         <p>{{ texts().about.description1 }}</p>
@@ -19,11 +16,11 @@
       <!-- Location & Remote Info -->
       <div class="about__info">
         <div class="about__info-item">
-          <img src="assets/icons/house.svg" alt="" class="about__info-icon">
+          <img src="assets/icon/house.svg" alt="" class="about__info-icon" />
           <span>{{ texts().about.location }}</span>
         </div>
         <div class="about__info-item">
-          <img src="assets/icons/laptop_chromebook.svg" alt="" class="about__info-icon">
+          <img src="assets/icon/laptop_chromebook.svg" alt="" class="about__info-icon" />
           <span>{{ texts().about.remote }}</span>
         </div>
       </div>
@@ -32,7 +29,6 @@
       <a href="#contact" class="about__button">
         {{ texts().about.button }}
       </a>
-
     </div>
   </div>
 
@@ -40,14 +36,14 @@
   <div class="about__image-wrapper">
     <div class="about__image-container">
       <div class="about__image-frame" [class.visible]="isFrameVisible"></div>
-      <img src="assets/images/ak-square-bw.jpeg" alt="Akin Külhanbey" class="about__image">
+      <img src="assets/images/ak-square-bw.jpeg" alt="Akin Külhanbey" class="about__image" />
     </div>
   </div>
 
   <!-- Arrow -->
   <a href="#skills" class="about__arrow">
-    <img src="assets/icons/arrow-left1.svg" alt="" class="about__arrow-1">
-    <img src="assets/icons/arrow-left2.svg" alt="" class="about__arrow-2">
-    <img src="assets/icons/arrow-left3.svg" alt="" class="about__arrow-3">
+    <img src="assets/icon/arrow-left1.svg" alt="" class="about__arrow-1" />
+    <img src="assets/icon/arrow-left2.svg" alt="" class="about__arrow-2" />
+    <img src="assets/icon/arrow-left3.svg" alt="" class="about__arrow-3" />
   </a>
 </section>

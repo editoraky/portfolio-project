@@ -59,6 +59,15 @@ export interface TranslatedTexts {
     submitButton: string;
     submitButtonMobile: string;
   };
+  references: {
+    title: string;
+    subtitle: string;
+    roleTeamPartner: string;
+    roleFrontendEngineer: string;
+    testimonial1: string;
+    testimonial2: string;
+    testimonial3: string;
+  };
 }
 
 @Injectable({
@@ -135,7 +144,7 @@ export class LanguageService {
         subtitle: TRANSLATIONS.portfolio.subtitle[lang],
         project1Desc: TRANSLATIONS.portfolio.project1Desc[lang],
         project2Desc: TRANSLATIONS.portfolio.project2Desc[lang],
-        project3Desc: TRANSLATIONS.portfolio.project3Desc[lang]
+        project3Desc: TRANSLATIONS.portfolio.project3Desc[lang],
       },
       contact: {
         title: TRANSLATIONS.contact.title[lang],
@@ -154,6 +163,15 @@ export class LanguageService {
         errorPrivacy: TRANSLATIONS.contact.errorPrivacy[lang],
         submitButton: TRANSLATIONS.contact.submitButton[lang],
         submitButtonMobile: TRANSLATIONS.contact.submitButtonMobile[lang],
+      },
+      references: {
+        title: TRANSLATIONS.references.title[lang],
+        subtitle: TRANSLATIONS.references.subtitle[lang],
+        roleTeamPartner: TRANSLATIONS.references.roleTeamPartner[lang],
+        roleFrontendEngineer: TRANSLATIONS.references.roleFrontendEngineer[lang],
+        testimonial1: TRANSLATIONS.references.testimonial1[lang],
+        testimonial2: TRANSLATIONS.references.testimonial2[lang],
+        testimonial3: TRANSLATIONS.references.testimonial3[lang],
       },
     };
   }

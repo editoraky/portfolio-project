@@ -1,18 +1,24 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-references',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './references.html',
-  styleUrl: './references.scss'
+  styleUrl: './references.scss',
 })
 export class ReferencesComponent implements OnInit, OnDestroy {
-  
+  // Übersetzungsservice injizieren
+  private languageService = inject(LanguageService);
+
+  // Texte in aktueller Sprache (Signal)
+  texts = this.languageService.texts;
+
   isTitleGreen = false;
   isMobile = false;
-  
+
   private titleInterval: any;
 
   ngOnInit() {
@@ -37,7 +43,7 @@ export class ReferencesComponent implements OnInit, OnDestroy {
     if (this.isMobile && !wasMobile) {
       this.startTitleAnimation();
     }
-    
+
     if (!this.isMobile && wasMobile) {
       this.stopTitleAnimation();
     }

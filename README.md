@@ -157,7 +157,7 @@ portfolio
 │  │  │  ├─ Syne-Regular.ttf
 │  │  │  ├─ Syne-SemiBold.ttf
 │  │  │  └─ Syne-VariableFont_wght.ttf
-│  │  ├─ icons
+│  │  ├─ icon
 │  │  │  ├─ ak-logo.png
 │  │  │  ├─ ak-logo.svg
 │  │  │  ├─ angular-text.svg
