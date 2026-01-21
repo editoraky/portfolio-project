@@ -1,22 +1,28 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.scss'
+  styleUrl: './contact.scss',
 })
 export class ContactComponent implements OnInit {
-  
+  // Übersetzungsservice injizieren
+  private languageService = inject(LanguageService);
+
+  // Texte in aktueller Sprache (Signal)
+  texts = this.languageService.texts;
+
   formData = {
     name: '',
     email: '',
     message: '',
-    privacy: false
+    privacy: false,
   };
 
   // Error states
@@ -41,14 +47,16 @@ export class ContactComponent implements OnInit {
     return this.nameSuccess && this.emailSuccess && this.messageSuccess && this.formData.privacy;
   }
 
-  // Mobile'da title değişimi
+  // Dynamischer Titel (Desktop/Mobile)
   get contactTitle(): string {
-    return this.isMobile ? 'Say hi!' : 'Say Hi!';
+    const t = this.texts();
+    return this.isMobile ? t.contact.titleMobile : t.contact.title;
   }
 
-  // Mobile'da button text değişimi
+  // Dynamischer Button-Text (Desktop/Mobile)
   get submitButtonText(): string {
-    return this.isMobile ? 'Say hello ;)' : 'Send message';
+    const t = this.texts();
+    return this.isMobile ? t.contact.submitButtonMobile : t.contact.submitButton;
   }
 
   ngOnInit() {
@@ -75,7 +83,7 @@ export class ContactComponent implements OnInit {
   }
 
   onBlur(field: string) {
-    switch(field) {
+    switch (field) {
       case 'name':
         this.validateName();
         break;
@@ -141,7 +149,7 @@ export class ContactComponent implements OnInit {
       name: '',
       email: '',
       message: '',
-      privacy: false
+      privacy: false,
     };
     this.nameSuccess = false;
     this.emailSuccess = false;

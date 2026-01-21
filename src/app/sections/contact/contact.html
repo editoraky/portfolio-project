@@ -2,7 +2,7 @@
      CONTACT SECTION
      ============================================ -->
 <section class="contact" id="contact">
-  
+
   <!-- Siyah Arka Plan SVG -->
   <div class="contact__background">
     <img src="assets/icons/hintergrund-contact.svg" alt="" class="contact__bg-image">
@@ -18,15 +18,15 @@
 
       <!-- Sağ Taraf - Form -->
       <div class="contact__form-wrapper">
-        <h3 class="contact__form-title">Want to discuss a new project?</h3>
-        <p class="contact__form-subtitle">Say hello! let's discuss your ideas and make it happen</p>
+        <h3 class="contact__form-title">{{ texts().contact.formTitle }}</h3>
+        <p class="contact__form-subtitle">{{ texts().contact.formSubtitle }}</p>
 
         <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-          
+
           <!-- Name Input -->
           <div class="contact__input-group" [class.error]="nameError" [class.success]="nameSuccess">
-            <input 
-              type="text" 
+            <input
+              type="text"
               id="name"
               name="name"
               [(ngModel)]="formData.name"
@@ -35,20 +35,20 @@
               [class.has-value]="formData.name"
               required
             >
-            <label for="name">Your name</label>
+            <label for="name">{{ texts().contact.labelName }}</label>
             <span class="contact__input-icon contact__input-icon--error" *ngIf="nameError">
               <img src="assets/icons/error.svg" alt="Error">
             </span>
             <span class="contact__input-icon contact__input-icon--success" *ngIf="nameSuccess">
               <img src="assets/icons/done.svg" alt="Success">
             </span>
-            <span class="contact__error-message" *ngIf="nameError">Your name is required</span>
+            <span class="contact__error-message" *ngIf="nameError">{{ texts().contact.errorName }}</span>
           </div>
 
           <!-- Email Input -->
           <div class="contact__input-group" [class.error]="emailError" [class.success]="emailSuccess">
-            <input 
-              type="email" 
+            <input
+              type="email"
               id="email"
               name="email"
               [(ngModel)]="formData.email"
@@ -57,19 +57,19 @@
               [class.has-value]="formData.email"
               required
             >
-            <label for="email">Your email</label>
+            <label for="email">{{ texts().contact.labelEmail }}</label>
             <span class="contact__input-icon contact__input-icon--error" *ngIf="emailError">
               <img src="assets/icons/error.svg" alt="Error">
             </span>
             <span class="contact__input-icon contact__input-icon--success" *ngIf="emailSuccess">
               <img src="assets/icons/done.svg" alt="Success">
             </span>
-            <span class="contact__error-message" *ngIf="emailError">Your email is required</span>
+            <span class="contact__error-message" *ngIf="emailError">{{ texts().contact.errorEmail }}</span>
           </div>
 
           <!-- Message Textarea -->
           <div class="contact__input-group contact__input-group--textarea" [class.error]="messageError" [class.success]="messageSuccess">
-            <textarea 
+            <textarea
               id="message"
               name="message"
               [(ngModel)]="formData.message"
@@ -79,21 +79,21 @@
               rows="6"
               required
             ></textarea>
-            <label for="message">Your message</label>
+            <label for="message">{{ texts().contact.labelMessage }}</label>
             <span class="contact__input-icon contact__input-icon--error" *ngIf="messageError">
               <img src="assets/icons/error.svg" alt="Error">
             </span>
             <span class="contact__input-icon contact__input-icon--success" *ngIf="messageSuccess">
               <img src="assets/icons/done.svg" alt="Success">
             </span>
-            <span class="contact__error-message" *ngIf="messageError">Your message is required</span>
+            <span class="contact__error-message" *ngIf="messageError">{{ texts().contact.errorMessage }}</span>
           </div>
- 
+
           <!-- Privacy Checkbox -->
 <div class="contact__checkbox-group" [class.error]="privacyError" [class.checked]="formData.privacy">
-  <div class="contact__checkbox" 
+  <div class="contact__checkbox"
     (click)="togglePrivacy()"
-    (mouseenter)="onCheckboxHover(true)" 
+    (mouseenter)="onCheckboxHover(true)"
     (mouseleave)="onCheckboxHover(false)">
     <img *ngIf="!formData.privacy && !privacyHover" src="assets/icons/checkbox-1.svg" alt="">
     <img *ngIf="!formData.privacy && privacyHover" src="assets/icons/checkbox-1-hover.svg" alt="">
@@ -101,9 +101,9 @@
     <img *ngIf="formData.privacy && privacyHover" src="assets/icons/checkbox-checked-hover.svg" alt="">
   </div>
   <label (click)="togglePrivacy()">
-    I've read the <a routerLink="/privacy-policy" class="contact__privacy-link" (click)="$event.stopPropagation()">privacy policy</a> and agree to the processing of my data as outlined.
+    {{ texts().contact.privacyText1 }}<a routerLink="/privacy-policy" class="contact__privacy-link" (click)="$event.stopPropagation()">{{ texts().contact.privacyLink }}</a>{{ texts().contact.privacyText2 }}
   </label>
-  <span class="contact__error-message" *ngIf="privacyError">Please accept the privacy policy</span>
+  <span class="contact__error-message" *ngIf="privacyError">{{ texts().contact.errorPrivacy }}</span>
 </div>
 
          <!-- Submit Button -->

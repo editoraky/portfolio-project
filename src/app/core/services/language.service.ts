@@ -41,6 +41,24 @@ export interface TranslatedTexts {
     project2Desc: string;
     project3Desc: string;
   };
+  contact: {
+    title: string;
+    titleMobile: string;
+    formTitle: string;
+    formSubtitle: string;
+    labelName: string;
+    labelEmail: string;
+    labelMessage: string;
+    errorName: string;
+    errorEmail: string;
+    errorMessage: string;
+    privacyText1: string;
+    privacyLink: string;
+    privacyText2: string;
+    errorPrivacy: string;
+    submitButton: string;
+    submitButtonMobile: string;
+  };
 }
 
 @Injectable({
@@ -118,7 +136,25 @@ export class LanguageService {
         project1Desc: TRANSLATIONS.portfolio.project1Desc[lang],
         project2Desc: TRANSLATIONS.portfolio.project2Desc[lang],
         project3Desc: TRANSLATIONS.portfolio.project3Desc[lang]
-      }
+      },
+      contact: {
+        title: TRANSLATIONS.contact.title[lang],
+        titleMobile: TRANSLATIONS.contact.titleMobile[lang],
+        formTitle: TRANSLATIONS.contact.formTitle[lang],
+        formSubtitle: TRANSLATIONS.contact.formSubtitle[lang],
+        labelName: TRANSLATIONS.contact.labelName[lang],
+        labelEmail: TRANSLATIONS.contact.labelEmail[lang],
+        labelMessage: TRANSLATIONS.contact.labelMessage[lang],
+        errorName: TRANSLATIONS.contact.errorName[lang],
+        errorEmail: TRANSLATIONS.contact.errorEmail[lang],
+        errorMessage: TRANSLATIONS.contact.errorMessage[lang],
+        privacyText1: TRANSLATIONS.contact.privacyText1[lang],
+        privacyLink: TRANSLATIONS.contact.privacyLink[lang],
+        privacyText2: TRANSLATIONS.contact.privacyText2[lang],
+        errorPrivacy: TRANSLATIONS.contact.errorPrivacy[lang],
+        submitButton: TRANSLATIONS.contact.submitButton[lang],
+        submitButtonMobile: TRANSLATIONS.contact.submitButtonMobile[lang],
+      },
     };
   }
 }

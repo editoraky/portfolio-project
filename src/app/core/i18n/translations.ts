@@ -114,6 +114,75 @@ export const TRANSLATIONS = {
       de: 'Eine von Slack inspirierte Chat-Anwendung mit Echtzeit-Nachrichten, Kanälen und Direktnachrichten.',
     },
   },
+  // ------------------------------------------
+  // CONTACT SECTION
+  // ------------------------------------------
+  contact: {
+    title: {
+      en: 'Say Hi!',
+      de: 'Sag Hallo!',
+    },
+    titleMobile: {
+      en: 'Say hi!',
+      de: 'Sag hallo!',
+    },
+    formTitle: {
+      en: 'Want to discuss a new project?',
+      de: 'Möchten Sie ein neues Projekt besprechen?',
+    },
+    formSubtitle: {
+      en: "Say hello! let's discuss your ideas and make it happen",
+      de: 'Schreiben Sie mir! Lassen Sie uns Ihre Ideen besprechen und umsetzen',
+    },
+    labelName: {
+      en: 'Your name',
+      de: 'Ihr Name',
+    },
+    labelEmail: {
+      en: 'Your email',
+      de: 'Ihre E-Mail',
+    },
+    labelMessage: {
+      en: 'Your message',
+      de: 'Ihre Nachricht',
+    },
+    errorName: {
+      en: 'Your name is required',
+      de: 'Ihr Name ist erforderlich',
+    },
+    errorEmail: {
+      en: 'Your email is required',
+      de: 'Ihre E-Mail ist erforderlich',
+    },
+    errorMessage: {
+      en: 'Your message is required',
+      de: 'Ihre Nachricht ist erforderlich',
+    },
+    privacyText1: {
+      en: "I've read the ",
+      de: 'Ich habe die ',
+    },
+    privacyLink: {
+      en: 'privacy policy',
+      de: 'Datenschutzerklärung',
+    },
+    privacyText2: {
+      en: ' and agree to the processing of my data as outlined.',
+      de: ' gelesen und stimme der Verarbeitung meiner Daten zu.',
+    },
+    errorPrivacy: {
+      en: 'Please accept the privacy policy',
+      de: 'Bitte akzeptieren Sie die Datenschutzerklärung',
+    },
+    submitButton: {
+      en: 'Send message',
+      de: 'Nachricht senden',
+    },
+    submitButtonMobile: {
+      en: 'Say hello ;)',
+      de: 'Sag hallo ;)',
+    },
+  },
 } as const;
 
 // Typ-Definition für TypeScript
