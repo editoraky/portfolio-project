@@ -7,7 +7,7 @@
   <div class="skills__container">
 
 
-    <h2 class="skills__title"[class.green]="isTitleGreen">My skills</h2>
+    <h2 class="skills__title" [class.green]="isTitleGreen">{{ texts().skills.title }}</h2>
 
 
 
@@ -92,10 +92,10 @@
     <img src="assets/icons/learning.svg" alt="" class="skills__cta-icon">
   </div>
   <p class="skills__cta-text">
-    Don't see the skill you need?
-    <a href="#contact" class="skills__cta-link">Contact me</a>
-    I'm always ready to learn!
-  </p>
+  {{ texts().skills.ctaText1 }}
+  <a href="#contact" class="skills__cta-link">{{ texts().skills.ctaLink }}</a>
+  {{ texts().skills.ctaText2 }}
+</p>
 </div>
 
 

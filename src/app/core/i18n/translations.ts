@@ -68,7 +68,50 @@ export const TRANSLATIONS = {
     },
     button: {
       en: "Let's talk",
-      de: 'Lass uns reden',
+      de: 'Lass Sie uns reden',
+    },
+  },
+  // ------------------------------------------
+  // SKILLS SECTION
+  // ------------------------------------------
+  skills: {
+    title: {
+      en: 'My skills',
+      de: 'Meine Skills',
+    },
+    ctaText1: {
+      en: "Don't see the skill you need?",
+      de: 'Nicht die passende Fähigkeit dabei?',
+    },
+    ctaLink: {
+      en: 'Contact me',
+      de: 'Kontaktieren Sie mich',
+    },
+    ctaText2: {
+      en: "I'm always ready to learn!",
+      de: 'Ich lerne gerne Neues dazu!',
+    },
+  },
+
+  // ------------------------------------------
+  // PORTFOLIO SECTION
+  // ------------------------------------------
+  portfolio: {
+    subtitle: {
+      en: 'Explore a selection of my work here - Interact with projects to see my skills in action.',
+      de: 'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+    },
+    project1Desc: {
+      en: 'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe find coins and salsa bottles to fight against the killer chicken.',
+      de: 'Ein einfaches Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa-Flaschen zu finden, um gegen das Killer-Huhn zu kämpfen.',
+    },
+    project2Desc: {
+      en: 'Based on the PokéAPI, a simple library that provides and catalogues Pokémon information.',
+      de: 'Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.',
+    },
+    project3Desc: {
+      en: 'A Slack-inspired chat application with real-time messaging, channels, and direct messages.',
+      de: 'Eine von Slack inspirierte Chat-Anwendung mit Echtzeit-Nachrichten, Kanälen und Direktnachrichten.',
     },
   },
 } as const;

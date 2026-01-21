@@ -1,17 +1,20 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-skills',
   imports: [CommonModule],
   templateUrl: './skills.html',
-  styleUrl: './skills.scss'
+  styleUrl: './skills.scss',
 })
 export class SkillsComponent implements OnInit, OnDestroy {
-  
+  private languageService = inject(LanguageService);
+  texts = this.languageService.texts;
+
   isTitleGreen = false;
   isMobile = false;
-  
+
   private titleInterval: any;
 
   ngOnInit() {
@@ -36,7 +39,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
     if (this.isMobile && !wasMobile) {
       this.startTitleAnimation();
     }
-    
+
     if (!this.isMobile && wasMobile) {
       this.stopTitleAnimation();
     }

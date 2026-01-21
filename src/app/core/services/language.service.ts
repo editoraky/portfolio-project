@@ -29,6 +29,18 @@ export interface TranslatedTexts {
     remote: string;
     button: string;
   };
+  skills: {
+    title: string;
+    ctaText1: string;
+    ctaLink: string;
+    ctaText2: string;
+  };
+  portfolio: {
+    subtitle: string;
+    project1Desc: string;
+    project2Desc: string;
+    project3Desc: string;
+  };
 }
 
 @Injectable({
@@ -95,6 +107,18 @@ export class LanguageService {
         remote: TRANSLATIONS.about.remote[lang],
         button: TRANSLATIONS.about.button[lang],
       },
+      skills: {
+        title: TRANSLATIONS.skills.title[lang],
+        ctaText1: TRANSLATIONS.skills.ctaText1[lang],
+        ctaLink: TRANSLATIONS.skills.ctaLink[lang],
+        ctaText2: TRANSLATIONS.skills.ctaText2[lang],
+      },
+      portfolio: {
+        subtitle: TRANSLATIONS.portfolio.subtitle[lang],
+        project1Desc: TRANSLATIONS.portfolio.project1Desc[lang],
+        project2Desc: TRANSLATIONS.portfolio.project2Desc[lang],
+        project3Desc: TRANSLATIONS.portfolio.project3Desc[lang]
+      }
     };
   }
 }

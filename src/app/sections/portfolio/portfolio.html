@@ -8,8 +8,7 @@
     <div class="portfolio__header">
       <h2 class="portfolio__title" [class.green]="isTitleGreen">Portfolio</h2>
       <p class="portfolio__subtitle">
-        Explore a selection of my work here - Interact with
-        projects to see my skills in action.
+        {{ texts().portfolio.subtitle }}
       </p>
     </div>
 
@@ -33,8 +32,7 @@
               <h3 class="portfolio__name">El Pollo Loco</h3>
               <p class="portfolio__tech">JavaScript | HTML | CSS</p>
               <p class="portfolio__description">
-                A simple Jump-and-Run game based on an object-oriented approach.
-                Help Pepe find coins and salsa bottles to fight against the killer chicken.
+                {{ texts().portfolio.project1Desc }}
               </p>
               <a href="#" target="_blank" class="portfolio__button">Github</a>
             </div>
@@ -59,8 +57,7 @@
               <h3 class="portfolio__name">Pokédex</h3>
               <p class="portfolio__tech">JavaScript | HTML | CSS | API</p>
               <p class="portfolio__description">
-                Based on the PokéAPI, a simple library that provides and catalogues
-                Pokémon information.
+                {{ texts().portfolio.project2Desc }}
               </p>
               <a href="#" target="_blank" class="portfolio__button">Github</a>
             </div>
@@ -85,8 +82,7 @@
               <h3 class="portfolio__name">DABubble</h3>
               <p class="portfolio__tech">Angular | TypeScript | Firebase</p>
               <p class="portfolio__description">
-                A Slack-inspired chat application with real-time messaging,
-                channels, and direct messages.
+                {{ texts().portfolio.project3Desc }}
               </p>
               <a href="#" target="_blank" class="portfolio__button">Github</a>
             </div>
