@@ -1,18 +1,21 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-about',
   imports: [CommonModule],
   templateUrl: './about.html',
-  styleUrl: './about.scss'
+  styleUrl: './about.scss',
 })
 export class AboutComponent implements OnInit, OnDestroy {
-  
+  private languageService = inject(LanguageService);
+  texts = this.languageService.texts;
+
   isTitleGreen = false;
   isFrameVisible = false;
   isMobile = false;
-  
+
   private titleInterval: any;
   private frameInterval: any;
 
@@ -43,7 +46,7 @@ export class AboutComponent implements OnInit, OnDestroy {
       this.startTitleAnimation();
       this.startFrameAnimation();
     }
-    
+
     // Desktop'a geçince animasyonları durdur
     if (!this.isMobile && wasMobile) {
       this.stopTitleAnimation();

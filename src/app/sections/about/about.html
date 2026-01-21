@@ -4,38 +4,34 @@
   <div class="about__content">
 
     <!-- About Me Header -->
-    <h2 class="about__title" [class.green]="isTitleGreen">About me</h2>
+    <h2 class="about__title" [class.green]="isTitleGreen">
+      {{ texts().about.title }}
+    </h2>
 
     <div class="about__text-wrapper">
 
       <!-- About me -->
       <div class="about__description">
-        <p>
-          Write some information about yourself that is IT related. Why
-          are you passionate about coding? Show a desire to learn new
-          technologies.
-        </p>
-        <p>
-          Add a brief description of your problem-solving approach.
-          You can include some key traits like: analytical thinking,
-          creativity, persistence and collaboration.
-        </p>
+        <p>{{ texts().about.description1 }}</p>
+        <p>{{ texts().about.description2 }}</p>
       </div>
 
       <!-- Location & Remote Info -->
       <div class="about__info">
         <div class="about__info-item">
           <img src="assets/icons/house.svg" alt="" class="about__info-icon">
-          <span>Based in Munich</span>
+          <span>{{ texts().about.location }}</span>
         </div>
         <div class="about__info-item">
           <img src="assets/icons/laptop_chromebook.svg" alt="" class="about__info-icon">
-          <span>Open to work Remote</span>
+          <span>{{ texts().about.remote }}</span>
         </div>
       </div>
 
       <!-- Let's Talk Button -->
-      <a href="#contact" class="about__button">Let's talk</a>
+      <a href="#contact" class="about__button">
+        {{ texts().about.button }}
+      </a>
 
     </div>
   </div>

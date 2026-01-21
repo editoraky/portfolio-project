@@ -1,28 +1,100 @@
-import { Injectable, signal } from '@angular/core';
+// ============================================
+// LANGUAGE SERVICE
+// Verwaltet die aktuelle Sprache und
+// liefert die passenden Übersetzungen
+// ============================================
+
+import { Injectable, signal, computed } from '@angular/core';
+import { TRANSLATIONS } from '../i18n/translations';
 
 export type Language = 'en' | 'de';
 
+// ============================================
+// INTERFACE: Struktur der übersetzten Texte
+// Hier definieren wir, wie die Texte aussehen
+// nachdem eine Sprache ausgewählt wurde
+// ============================================
+export interface TranslatedTexts {
+  header: {
+    aboutLink: string;
+    skillsLink: string;
+    portfolioLink: string;
+    sayHi: string;
+  };
+  about: {
+    title: string;
+    description1: string;
+    description2: string;
+    location: string;
+    remote: string;
+    button: string;
+  };
+}
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LanguageService {
+  // Signal für die aktuelle Sprache (privat)
   private currentLanguage = signal<Language>('en');
-  
+
+  // Öffentliches Signal (nur lesen)
   language = this.currentLanguage.asReadonly();
 
+  // Computed Signal: Gibt alle Texte in der aktuellen Sprache zurück
+  texts = computed(() => this.getTranslatedTexts());
+
   constructor() {
+    this.loadSavedLanguage();
+  }
+
+  /**
+   * Lädt die gespeicherte Sprache aus dem Browser
+   */
+  private loadSavedLanguage(): void {
     const saved = localStorage.getItem('language') as Language;
     if (saved === 'en' || saved === 'de') {
       this.currentLanguage.set(saved);
     }
   }
 
+  /**
+   * Wechselt die Sprache und speichert sie
+   */
   setLanguage(lang: Language): void {
     this.currentLanguage.set(lang);
     localStorage.setItem('language', lang);
   }
 
+  /**
+   * Gibt die aktuelle Sprache zurück
+   */
   getLanguage(): Language {
     return this.currentLanguage();
+  }
+
+  /**
+   * Wandelt alle Übersetzungen in die aktuelle Sprache um
+   * Gibt ein typisiertes Objekt zurück
+   */
+  private getTranslatedTexts(): TranslatedTexts {
+    const lang = this.currentLanguage();
+
+    return {
+      header: {
+        aboutLink: TRANSLATIONS.header.aboutLink[lang],
+        skillsLink: TRANSLATIONS.header.skillsLink[lang],
+        portfolioLink: TRANSLATIONS.header.portfolioLink[lang],
+        sayHi: TRANSLATIONS.header.sayHi[lang],
+      },
+      about: {
+        title: TRANSLATIONS.about.title[lang],
+        description1: TRANSLATIONS.about.description1[lang],
+        description2: TRANSLATIONS.about.description2[lang],
+        location: TRANSLATIONS.about.location[lang],
+        remote: TRANSLATIONS.about.remote[lang],
+        button: TRANSLATIONS.about.button[lang],
+      },
+    };
   }
 }

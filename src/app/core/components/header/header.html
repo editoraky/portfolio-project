@@ -68,17 +68,17 @@
 <div class="mobile-nav" [class.open]="isMenuOpen">
 
   <!-- Menü Links -->
-  <nav class="mobile-nav__content">
-    <a #aboutLink class="mobile-nav__link" href="#about" 
-       (touchstart)="onMobileLinkDown($event, aboutLink)" 
-       (touchend)="onMobileLinkUp($event, '#about')">About me</a>
-    <a #skillsLink class="mobile-nav__link" href="#skills" 
-       (touchstart)="onMobileLinkDown($event, skillsLink)" 
-       (touchend)="onMobileLinkUp($event, '#skills')">Skills</a>
-    <a #portfolioLink class="mobile-nav__link" href="#portfolio" 
-       (touchstart)="onMobileLinkDown($event, portfolioLink)" 
-       (touchend)="onMobileLinkUp($event, '#portfolio')">Portfolio</a>
-  </nav>
+<nav class="mobile-nav__content">
+  <a #aboutLink class="mobile-nav__link" href="#about"
+     (touchstart)="onMobileLinkDown($event, aboutLink)"
+     (touchend)="onMobileLinkUp($event, '#about')">{{ texts().header.aboutLink }}</a>
+  <a #skillsLink class="mobile-nav__link" href="#skills"
+     (touchstart)="onMobileLinkDown($event, skillsLink)"
+     (touchend)="onMobileLinkUp($event, '#skills')">{{ texts().header.skillsLink }}</a>
+  <a #portfolioLink class="mobile-nav__link" href="#portfolio"
+     (touchstart)="onMobileLinkDown($event, portfolioLink)"
+     (touchend)="onMobileLinkUp($event, '#portfolio')">{{ texts().header.portfolioLink }}</a>
+</nav>
 
   <!-- Contact Bar -->
   <div class="mobile-nav__contact">
@@ -87,8 +87,7 @@
     <div class="mobile-nav__contact-content">
       <div class="mobile-nav__contact-left">
         <a href="#contact" class="mobile-nav__sayhi" (click)="closeMenu()">
-          <span class="desktop-only">Say Hi!</span>
-          <span class="mobile-only">Say hi!</span>
+            {{ texts().header.sayHi }}
         </a>
         <a href="mailto:your@email.com" class="mobile-nav__email">your&#64;email.com</a>
       </div>
