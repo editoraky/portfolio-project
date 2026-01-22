@@ -68,6 +68,9 @@ export interface TranslatedTexts {
     testimonial2: string;
     testimonial3: string;
   };
+  footer: {
+    legalNotice: string;
+  };
 }
 
 @Injectable({
@@ -172,6 +175,9 @@ export class LanguageService {
         testimonial1: TRANSLATIONS.references.testimonial1[lang],
         testimonial2: TRANSLATIONS.references.testimonial2[lang],
         testimonial3: TRANSLATIONS.references.testimonial3[lang],
+      },
+      footer: {
+        legalNotice: TRANSLATIONS.footer.legalNotice[lang],
       },
     };
   }

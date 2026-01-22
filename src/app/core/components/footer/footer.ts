@@ -3,8 +3,9 @@
 // Enthält Logo, Copyright, Social Links und Legal Notice
 // ============================================
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,7 +14,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
+
 export class FooterComponent {
-  // Aktuell keine Logik nötig
-  // Die Komponente ist rein visuell (statisch)
+  // LanguageService für Übersetzungen
+  private languageService = inject(LanguageService);
+
+  // Übersetzungstexte als Signal
+  texts = this.languageService.texts;
 }
