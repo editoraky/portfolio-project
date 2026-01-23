@@ -1,13 +1,5 @@
-// ============================================
-// ABOUT SECTION - STYLES
-// ============================================
-
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
-
-// ============================================
-// MAIN SECTION
-// ============================================
 
 .about {
   height: 100vh;
@@ -16,24 +8,20 @@
   justify-content: space-between;
   position: relative;
   background-color: $color-background;
-  padding: 0 $padding-horizontal;            // ← Esnek padding
-  padding-top: clamp(80px, 12vw, 120px);                     // ← Esnek top padding
+  padding: 0 $padding-horizontal; // ← Esnek padding
+  padding-top: clamp(80px, 12vw, 120px); // ← Esnek top padding
   max-width: $max-content-width;
   margin: 0 auto;
-  gap: clamp(32px, 4vw, $spacing-xl);                         // ← Esnek gap
+  gap: clamp(32px, 4vw, $spacing-xl); // ← Esnek gap
   overflow: visible;
 }
-
-// ============================================
-// TITLE - Yeşil/Beyaz Animasyon
-// ============================================
 
 .about__title {
   font-family: $font-heading;
   font-weight: $font-weight-extrabold;
-  font-size: clamp(56px, 6vw, 88px);                          // ← Esnek font
+  font-size: clamp(56px, 6vw, 88px); // ← Esnek font
   color: $color-text;
-  margin-bottom: clamp(24px, 4vw, $spacing-lg);               // ← Esnek margin
+  margin-bottom: clamp(24px, 4vw, $spacing-lg); // ← Esnek margin
   line-height: 1;
   white-space: nowrap;
   transition: color 0.3s ease;
@@ -47,13 +35,9 @@
   }
 }
 
-// ============================================
-// LEFT SIDE: CONTENT
-// ============================================
-
 .about__content {
   flex: 1;
-  max-width: clamp(400px, 55%, 650px);     // ← Esnek genişlik
+  max-width: clamp(400px, 55%, 650px); // ← Esnek genişlik
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -65,11 +49,9 @@
 }
 
 .about__description {
-  margin-bottom: clamp(24px, 4vw, $spacing-lg);     // ← Esnek margin
+  margin-bottom: clamp(24px, 4vw, $spacing-lg); // ← Esnek margin
   max-width: 100%;
 }
-
-// Global p stilini override et
 .about .about__description p {
   font-family: $font-body;
   font-size: clamp(18px, 3vw, 22px); // ← Esnek font
@@ -83,15 +65,11 @@
   }
 }
 
-// ============================================
-// INFO ITEMS
-// ============================================
-
 .about__info {
   display: flex;
   flex-direction: column;
   gap: $spacing-sm;
-  margin-bottom: clamp(24px, 4vw, $spacing-lg);    // ← Esnek margin
+  margin-bottom: clamp(24px, 4vw, $spacing-lg); // ← Esnek margin
 }
 
 .about__info-item {
@@ -101,27 +79,23 @@
 
   span {
     font-family: $font-body;
-    font-size: clamp(18px, 3vw, 22px);      // ← Esnek font
+    font-size: clamp(18px, 3vw, 22px); // ← Esnek font
     font-weight: 500;
     color: $color-text;
   }
 }
 
 .about__info-icon {
-  width: clamp(40px, 3vw, 48px);          // ← Esnek icon
+  width: clamp(40px, 3vw, 48px); // ← Esnek icon
   height: clamp(40px, 3vw, 48px);
   filter: brightness(0);
 }
 
-// ============================================
-// LET'S TALK BUTTON
-// ============================================
-
 .about__button {
   display: inline-block;
-  padding: clamp(14px, 2vw, 16px) clamp(64px, 3vw, 88px);   // ← Esnek padding
+  padding: clamp(14px, 2vw, 16px) clamp(64px, 3vw, 88px); // ← Esnek padding
   font-family: $font-body;
-  font-size: clamp(24px, 2vw, 26px);  // ← Esnek font
+  font-size: clamp(24px, 2vw, 26px); // ← Esnek font
   font-weight: 400;
   color: $color-text;
   text-decoration: none;
@@ -138,16 +112,12 @@
   }
 }
 
-// ============================================
-// IMAGE
-// ============================================
-
 .about__image-wrapper {
   position: relative;
   flex-shrink: 1;
   align-self: flex-start;
   margin-top: clamp(100px, 12vw, 140px);
-  width: clamp(280px, 45vw, 380px);  // ← Esnek genişlik
+  width: clamp(280px, 45vw, 380px); // ← Esnek genişlik
   margin-right: 20px;
 }
 
@@ -157,9 +127,9 @@
 }
 
 .about__image {
-  width: 100%;        // ← %100 wrapper'a göre
+  width: 100%; // ← %100 wrapper'a göre
   height: auto;
-  aspect-ratio: 4/5;   // ← Oran koruma
+  aspect-ratio: 4/5; // ← Oran koruma
   object-fit: cover;
   display: block;
   position: relative;
@@ -168,11 +138,11 @@
 
 .about__image-frame {
   position: absolute;
-  top: clamp(15px, 2vw, 20px);  // ← Esnek pozisyon
+  top: clamp(15px, 2vw, 20px); // ← Esnek pozisyon
   left: clamp(15px, 2vw, 20px);
   width: 100%;
   height: 100%;
-  border: 5px solid $color-text;  // ← Esnek border
+  border: 5px solid $color-text; // ← Esnek border
   z-index: 2;
   opacity: 0;
   transition: opacity 0.125s ease;
@@ -189,10 +159,6 @@
   }
 }
 
-// ============================================
-// ARROW
-// ============================================
-
 .about__arrow {
   position: absolute;
   right: clamp(40px, 12vw, 100px);
@@ -200,8 +166,6 @@
   width: clamp(250px, 40vw, 460px);
   height: clamp(250px, 40vw, 460px);
   z-index: 10;
-
-  // Tüm oklar aynı pozisyonda
   img {
     position: absolute;
     width: 100%;
@@ -210,12 +174,15 @@
     left: -35px;
   }
 
-  .about__arrow-1 { opacity: 1; }
-  .about__arrow-2 { opacity: 0; }
-  .about__arrow-3 { opacity: 0; }
-
-
-  // HOVER
+  .about__arrow-1 {
+    opacity: 1;
+  }
+  .about__arrow-2 {
+    opacity: 0;
+  }
+  .about__arrow-3 {
+    opacity: 0;
+  }
   &:hover {
     .about__arrow-1 {
       animation: hideArrow 0.15s ease-out forwards;
@@ -231,31 +198,38 @@
   }
 }
 
-// ============================================
-// ARROW ANIMATIONS (DIŞARIDA OLMALI!)
-// ============================================
-
 @keyframes hideArrow {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes showHideArrow {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  60% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes showArrow {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-
-// ============================================
-// MOBILE RESPONSIVE (768px - 320px)
-// ============================================
 
 @media (max-width: 768px) {
   .about {
@@ -271,8 +245,7 @@
 
   .about__title {
     font-size: clamp(28px, 10vw, 56px);
-    margin-bottom: 48
-    px;
+    margin-bottom: 48 px;
     white-space: nowrap;
     text-align: center;
     width: 100%;
@@ -294,12 +267,10 @@
     max-width: 90%;
     margin-bottom: 26px;
   }
-
-  // Mobile için p override
-  .about .about__content .about__description p  {
+  .about .about__content .about__description p {
     font-size: 20px;
     font-weight: 500;
-     line-height: 1.4;
+    line-height: 1.4;
   }
 
   .about__info {
@@ -307,7 +278,7 @@
     padding-left: 0;
   }
 
-  .about__info .about__info-item{
+  .about__info .about__info-item {
     span {
       font-size: 20px;
       font-weight: 400;
@@ -331,15 +302,15 @@
 
     &:hover {
       padding: clamp(20px, 6vw, 22px) clamp(100px, 22vw, 140px);
-      font-weight: 700
+      font-weight: 700;
     }
 
-  &:active {
-    padding: clamp(20px, 6vw, 22px) clamp(100px, 20vw, 140px);
-    border-width: 4px;
-    background-color: $color-text;
-    color: $color-background;
-  }
+    &:active {
+      padding: clamp(20px, 6vw, 22px) clamp(100px, 20vw, 140px);
+      border-width: 4px;
+      background-color: $color-text;
+      color: $color-background;
+    }
   }
 
   .about__image-wrapper {
@@ -348,7 +319,7 @@
     max-width: 400px;
     margin-top: 0;
     align-self: center;
-  margin: 0 auto;
+    margin: 0 auto;
   }
 
   .about__image {
@@ -380,23 +351,15 @@
     }
   }
 }
-
-
-// Sadece dokunmatik cihazlar için (gerçek mobile)
 @media (max-width: 768px) and (hover: none) {
   .about__button {
     &:hover {
-      padding: clamp(20px, 6vw, 22px) clamp(80px, 20vw, 120px);  // ← Aynı boyut
+      padding: clamp(20px, 6vw, 22px) clamp(80px, 20vw, 120px); // ← Aynı boyut
       background-color: transparent;
       color: $color-text;
     }
   }
 }
-
-
-// ============================================
-// SMALL MOBILE (480px ve altı)
-// ============================================
 
 @media (max-width: 480px) {
   .about {
@@ -414,8 +377,6 @@
   .about__content {
     padding-left: 16px;
   }
-
-  // Small mobile için p override
   .about .about__description p {
     font-size: 18px;
   }

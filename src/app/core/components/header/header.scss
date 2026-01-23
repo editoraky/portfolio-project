@@ -1,13 +1,5 @@
-// ============================================
-// HEADER KOMPONENTE - STYLES
-// ============================================
-
 @use '../../../../styles/variables' as *;
 @use '../../../../styles/mixins' as *;
-
-// ============================================
-// HEADER (Hauptcontainer)
-// ============================================
 
 .header {
   position: fixed;
@@ -24,10 +16,6 @@
     height: 100%;
   }
 }
-
-// ============================================
-// LOGO
-// ============================================
 
 .header__logo {
   display: inline-block;
@@ -47,18 +35,10 @@
   width: auto;
 }
 
-// ============================================
-// NAVIGATION (Rechte Seite)
-// ============================================
-
 .header__nav {
   @include flex-center;
   gap: $spacing-lg;
 }
-
-// ============================================
-// SPRACHENWECHSEL - DESKTOP
-// ============================================
 
 .header__language {
   gap: 7px;
@@ -110,11 +90,6 @@
   }
 }
 
-// ============================================
-// SPRACHENWECHSEL - MOBILE (header içinde)
-// Sadece 768px altında ve menü açıkken görünür
-// ============================================
-
 .header__language-mobile {
   display: none !important; // Desktop'ta kesinlikle gizli
   gap: 7px;
@@ -160,17 +135,11 @@
     }
   }
 }
-
-// Mobile'da menü açıkken görünür
 @media (max-width: 768px) {
   .header__language-mobile.visible {
     display: flex !important;
   }
 }
-
-// ============================================
-// HAMBURGER MENÜ BUTTON
-// ============================================
 
 .header__menu-btn {
   @include button-base;
@@ -204,10 +173,6 @@
   }
 }
 
-// ============================================
-// MOBILE NAVIGATION OVERLAY
-// ============================================
-
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -228,8 +193,6 @@
     visibility: visible;
   }
 
-  // Eski mobile-nav__language kaldırıldı - artık header içinde
-
   &__content {
     @include flex-column;
     justify-content: flex-start;
@@ -238,10 +201,6 @@
     padding-top: 10vh;
     gap: clamp(32px, 5vw, 48px);
   }
-
-  // ============================================
-  // MENÜ LINKS - DESKTOP
-  // ============================================
   &__link {
     position: relative;
     font-family: $font-heading;
@@ -255,8 +214,6 @@
     white-space: nowrap;
     transition: color $transition-normal;
     -webkit-tap-highlight-color: transparent;
-
-    // L-FORM: Sol dikey çizgi
     &::before {
       content: '';
       position: absolute;
@@ -267,8 +224,6 @@
       background-color: $color-text;
       transition: opacity 0.2s ease;
     }
-
-    // L-FORM: Alt yatay çizgi
     &::after {
       content: '';
       position: absolute;
@@ -278,8 +233,6 @@
       height: clamp(2px, 0.5vw, 4px);
       background-color: $color-text;
     }
-
-    // HOVER - L kaybolur, çizgi animasyonu
     &:hover::before {
       opacity: 0;
     }
@@ -287,8 +240,6 @@
     &:hover::after {
       animation: underlineSlide 0.8s ease-out forwards;
     }
-
-    // DESKTOP ACTIVE (tıklama) - kare çerçeve
     &:active {
       outline: clamp(2px, 0.4vw, 3px) solid $color-text;
       outline-offset: 0px;
@@ -300,8 +251,6 @@
     }
   }
 }
-
-// Desktop animasyon
 @keyframes underlineSlide {
   0% {
     width: 10%;
@@ -316,10 +265,6 @@
     left: 50%;
   }
 }
-
-// ============================================
-// CONTACT BAR
-// ============================================
 
 .mobile-nav__contact {
   position: absolute;
@@ -394,12 +339,6 @@
   }
 }
 
-// ============================================
-// ============================================
-// MOBILE STYLES (768px ve altı)
-// ============================================
-// ============================================
-
 @include tablet {
   .mobile-nav__contact {
     position: absolute;
@@ -407,8 +346,6 @@
     left: 0;
     width: 100%;
     height: auto;
-
-    // Siyah arka plan görseli tam alta yapışsın
     &-bg {
       display: block;
       width: 100%;
@@ -434,8 +371,6 @@
       display: none;
     }
   }
-
-  // Say hi! - daha büyük, renk JS ile değişecek
   .mobile-nav__sayhi {
     font-size: clamp(36px, 12vw, 48px);
     color: $color-primary;
@@ -445,8 +380,6 @@
       color: white;
     }
   }
-
-  // Email - beyaz
   .mobile-nav__email {
     color: white;
     font-size: clamp(16px, 4vw, 20px);
@@ -458,10 +391,6 @@
     width: 28px;
     height: 28px;
   }
-
-  // ============================================
-  // MOBILE LINK STYLES
-  // ============================================
   .mobile-nav__content {
     padding-top: 22vh !important;
   }
@@ -469,8 +398,6 @@
   .mobile-nav__link {
     font-weight: $font-weight-bold;
     padding: 2px 4px;
-
-    // L şekli pozisyonu
     &::before {
       left: -10px !important;
       width: 5px !important; //dikey cizgi kalınlığı
@@ -481,8 +408,6 @@
       width: 10% !important;
       height: 5px !important; //yatay cizgi kalınlığı
     }
-
-    // HOVER tamamen devre dışı
     &:hover::before {
       opacity: 1 !important;
     }
@@ -492,8 +417,6 @@
       width: 10% !important;
       left: -10px !important;
     }
-
-    // ACTIVE devre dışı
     &:active {
       outline: none !important;
     }
@@ -505,8 +428,6 @@
     &:active::after {
       animation: none !important;
     }
-
-    // CLICKED-FULL: Tam çizgi
     &.clicked-full::before {
       opacity: 0 !important;
     }
@@ -516,8 +437,6 @@
       left: 0 !important;
       transition: all 0.15s ease-out !important;
     }
-
-    // CLICKED-HALF: Sağ yarım
     &.clicked-half::before {
       opacity: 0 !important;
     }

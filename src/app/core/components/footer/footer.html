@@ -1,10 +1,5 @@
-<!--
-  FOOTER KOMPONENTE
-  Enthält Logo, Copyright, Social Links und Legal Notice
--->
 <footer class="footer">
   <div class="footer__container container">
-    <!-- Linke Seite: Logo & Copyright -->
     <div class="footer__left">
       <a routerLink="/" class="footer__logo" aria-label="Zur Startseite">
         <img src="assets/icon/ak-logo.png" alt="AK Logo" class="footer__logo-img" />
@@ -14,10 +9,7 @@
       </a>
       <p class="footer__copyright">© Akin Kuelhanbey 2025</p>
     </div>
-
-    <!-- Rechte Seite: Social Links & Legal -->
     <div class="footer__right">
-      <!-- Social Media Links -->
       <div class="footer__social">
         <a
           href="https://github.com/DEIN-USERNAME"
@@ -41,8 +33,6 @@
           <img src="assets/icon/linkedin.svg" alt="" class="footer__social-icon" />
         </a>
       </div>
-
-      <!-- Legal Notice Link -->
       <a routerLink="/legal-notice" class="footer__legal-link">{{ texts().footer.legalNotice }}</a>
     </div>
   </div>

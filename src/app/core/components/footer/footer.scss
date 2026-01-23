@@ -1,14 +1,5 @@
-// ============================================
-// FOOTER KOMPONENTE - STYLES
-// ============================================
-
 @use '../../../../styles/variables' as *;
 @use '../../../../styles/mixins' as *;
-
-
-// ============================================
-// FOOTER (Hauptcontainer)
-// ============================================
 
 .footer {
   width: 100%;
@@ -26,11 +17,6 @@
     gap: $spacing-lg;
   }
 }
-
-
-// ============================================
-// LINKE SEITE (Logo & Copyright)
-// ============================================
 
 .footer__left {
   @include flex-column;
@@ -59,9 +45,9 @@
 }
 
 .footer__logo-img {
-  height: 40px;  // Passe die Größe an dein Design an
+  height: 40px; // Passe die Größe an dein Design an
   width: auto;
-  filter: invert(1);  // Kehrt Schwarz → Weiß um
+  filter: invert(1); // Kehrt Schwarz → Weiß um
 }
 
 .footer__copyright {
@@ -82,11 +68,6 @@
   }
 }
 
-
-// ============================================
-// RECHTE SEITE (Social Links & Legal)
-// ============================================
-
 .footer__right {
   @include flex-column;
   align-items: flex-end;
@@ -97,11 +78,6 @@
     order: 1;
   }
 }
-
-
-// ============================================
-// SOCIAL LINKS
-// ============================================
 
 .footer__social {
   @include flex-center;
@@ -122,11 +98,6 @@
   height: 32px;
   filter: brightness(0) invert(1);
 }
-
-
-// ============================================
-// LEGAL NOTICE LINK
-// ============================================
 
 .footer__legal-link {
   font-family: $font-body;

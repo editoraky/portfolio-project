@@ -1,12 +1,4 @@
-// ============================================
-// ZENTRALE ÜBERSETZUNGEN
-// Alle Texte der Website in EN und DE
-// ============================================
-
 export const TRANSLATIONS = {
-  // ------------------------------------------
-  // HEADER & NAVIGATION
-  // ------------------------------------------
   header: {
     aboutLink: {
       en: 'About me',
@@ -25,10 +17,6 @@ export const TRANSLATIONS = {
       de: 'Sag Hallo!',
     },
   },
-
-  // ------------------------------------------
-  // ABOUT SECTION
-  // ------------------------------------------
   about: {
     title: {
       en: 'About me',
@@ -71,9 +59,6 @@ export const TRANSLATIONS = {
       de: 'Lass Sie uns reden',
     },
   },
-  // ------------------------------------------
-  // SKILLS SECTION
-  // ------------------------------------------
   skills: {
     title: {
       en: 'My skills',
@@ -92,10 +77,6 @@ export const TRANSLATIONS = {
       de: 'Ich lerne gerne Neues dazu!',
     },
   },
-
-  // ------------------------------------------
-  // PORTFOLIO SECTION
-  // ------------------------------------------
   portfolio: {
     subtitle: {
       en: 'Explore a selection of my work here - Interact with projects to see my skills in action.',
@@ -114,9 +95,6 @@ export const TRANSLATIONS = {
       de: 'Eine von Slack inspirierte Chat-Anwendung mit Echtzeit-Nachrichten, Kanälen und Direktnachrichten.',
     },
   },
-  // ------------------------------------------
-  // CONTACT SECTION
-  // ------------------------------------------
   contact: {
     title: {
       en: 'Say Hi!',
@@ -183,9 +161,6 @@ export const TRANSLATIONS = {
       de: 'Sag hallo ;)',
     },
   },
-  // ------------------------------------------
-  // REFERENCES SECTION
-  // ------------------------------------------
   references: {
     title: {
       en: 'References',
@@ -216,9 +191,6 @@ export const TRANSLATIONS = {
       de: 'Die Zusammenarbeit mit Akin war eine große Freude. Mit Humor, Ideenreichtum und Know-how schafft er Motivation, Fokus und echten Fortschritt im Team.',
     },
   },
-  // ------------------------------------------
-  // FOOTER
-  // ------------------------------------------
   footer: {
     legalNotice: {
       en: 'Legal notice',
@@ -226,7 +198,4 @@ export const TRANSLATIONS = {
     },
   },
 } as const;
-
-// Typ-Definition für TypeScript
-// Das hilft bei der Autovervollständigung im Editor
 export type TranslationKeys = typeof TRANSLATIONS;

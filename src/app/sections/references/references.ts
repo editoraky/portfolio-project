@@ -10,10 +10,7 @@ import { LanguageService } from '../../core/services/language.service';
   styleUrl: './references.scss',
 })
 export class ReferencesComponent implements OnInit, OnDestroy {
-  // Übersetzungsservice injizieren
   private languageService = inject(LanguageService);
-
-  // Texte in aktueller Sprache (Signal)
   texts = this.languageService.texts;
 
   isTitleGreen = false;

@@ -1,7 +1,3 @@
-// ============================================
-// HEADER KOMPONENTE
-// ============================================
-
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageService, Language } from '../../services/language.service';
@@ -28,8 +24,6 @@ export class HeaderComponent {
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
     document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
-
-    // Menü açılınca blink başlat
     if (this.isMenuOpen) {
       this.startSayHiBlink();
     } else {
@@ -43,32 +37,20 @@ export class HeaderComponent {
     this.stopSayHiBlink();
   }
 
-  /**
-   * Mobile link - basılı tutunca animasyon başlar
-   */
   onMobileLinkDown(event: Event, link: HTMLElement): void {
     event.preventDefault();
-
-    // 1. Önce tam çizgi
     link.classList.add('clicked-full');
-
-    // 2. 200ms sonra sağ yarım
     setTimeout(() => {
       link.classList.remove('clicked-full');
       link.classList.add('clicked-half');
     }, 200);
   }
 
-  /**
-   * Mobile link - bırakınca linke git
-   */
   onMobileLinkUp(event: Event, targetId: string): void {
     setTimeout(() => {
       this.isMenuOpen = false;
       document.body.style.overflow = '';
       this.stopSayHiBlink();
-
-      // Menü kapandıktan sonra tüm class'ları temizle
       setTimeout(() => {
         document.querySelectorAll('.mobile-nav__link').forEach((el) => {
           el.classList.remove('clicked-full', 'clicked-half');
@@ -81,11 +63,6 @@ export class HeaderComponent {
       }
     }, 150);
   }
-
-  // ============================================
-  // SAY HI! BLINK EFEKTİ
-  // 3sn yeşil, 2sn beyaz - süreleri buradan ayarla
-  // ============================================
   private startSayHiBlink(): void {
     const sayHi = document.querySelector('.mobile-nav__sayhi');
     if (!sayHi) return;
@@ -99,10 +76,7 @@ export class HeaderComponent {
         sayHi.classList.remove('white');
       }, whiteDuration);
     };
-
-    // İlk yeşil süresinden sonra başlat
     setTimeout(blink, greenDuration);
-    // Sonra döngüyle tekrarla
     this.blinkInterval = setInterval(blink, greenDuration + whiteDuration);
   }
 

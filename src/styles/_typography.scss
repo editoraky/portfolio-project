@@ -1,20 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
-
-// ==============================================
-// GOOGLE FONTS IMPORT
-// ==============================================
-
-// Syne: 700 (Bold), 800 (Extrabold) - für Überschriften
-// Overpass: 400 (Regular) - für Fließtext
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400&family=Syne:wght@700;800&display=swap');
-
-
-// ==============================================
-// BASIS-TYPOGRAFIE
-// ==============================================
-
-// Alles erbt diese Grundeinstellungen
 html {
   font-size: 16px; // Basis für rem-Einheiten
 }
@@ -26,18 +12,11 @@ body {
   line-height: 1.6;
   color: $color-text;
 }
-
-
-// ==============================================
-// ÜBERSCHRIFTEN
-// ==============================================
-
-// Hero-Titel ("Frontend Developer")
 .hero-title {
   font-family: $font-heading;
   font-weight: $font-weight-extrabold;
   font-size: $font-size-hero;
-  line-height: 1.0;
+  line-height: 1;
   color: $color-text;
 
   @include tablet {
@@ -48,8 +27,6 @@ body {
     font-size: 48px;
   }
 }
-
-// Sektions-Überschriften ("About me", "My skills", etc.)
 h1,
 .section-title {
   font-family: $font-heading;
@@ -66,8 +43,6 @@ h1,
     font-size: 36px;
   }
 }
-
-// Unter-Überschriften
 h2 {
   font-family: $font-heading;
   font-weight: $font-weight-bold;
@@ -79,8 +54,6 @@ h2 {
     font-size: 28px;
   }
 }
-
-// Kleine Überschriften
 h3 {
   font-family: $font-heading;
   font-weight: $font-weight-bold;
@@ -92,13 +65,6 @@ h3 {
     font-size: 20px;
   }
 }
-
-
-// ==============================================
-// TEXT-ELEMENTE
-// ==============================================
-
-// Normaler Absatz
 p {
   font-family: $font-body;
   font-weight: $font-weight-regular;
@@ -110,8 +76,6 @@ p {
     font-size: 16px;
   }
 }
-
-// Links
 a {
   color: $color-primary;
   text-decoration: none;
@@ -121,26 +85,15 @@ a {
     color: #00a67d;
   }
 }
-
-
-// ==============================================
-// SPEZIELLE TEXT-STYLES
-// ==============================================
-
-// Akzent-Text (z.B. "Stefan Engel" unter "Frontend Developer")
 .accent-text {
   color: $color-primary;
   font-family: $font-heading;
   font-weight: $font-weight-bold;
 }
-
-// Kleiner Text (z.B. Copyright)
 .small-text {
   font-size: $font-size-small;
   line-height: 1.4;
 }
-
-// Text auf dunklem Hintergrund
 .text-light {
   color: $color-text-light;
 }

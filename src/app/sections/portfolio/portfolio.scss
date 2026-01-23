@@ -1,13 +1,5 @@
-// ============================================
-// PORTFOLIO SECTION - STYLES
-// ============================================
-
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
-
-// ============================================
-// MAIN SECTION
-// ============================================
 
 .portfolio {
   background-color: $color-background;
@@ -17,10 +9,6 @@
     padding: 80px $padding-horizontal-mobile;
   }
 }
-
-// ============================================
-// HEADER
-// ============================================
 
 .portfolio__header {
   text-align: center;
@@ -55,19 +43,11 @@
   line-height: 1.5;
 }
 
-// ============================================
-// PROJECTS CONTAINER
-// ============================================
-
 .portfolio__projects {
   display: flex;
   flex-direction: column;
   gap: clamp(80px, 10vw, 120px);
 }
-
-// ============================================
-// SINGLE PROJECT
-// ============================================
 
 .portfolio__project {
   &--left .portfolio__image-wrapper {
@@ -115,10 +95,6 @@
   }
 }
 
-// ============================================
-// IMAGE WRAPPER (Container for image + details)
-// ============================================
-
 .portfolio__image-wrapper {
   display: flex;
   align-items: center;
@@ -148,10 +124,6 @@
     }
   }
 }
-
-// ============================================
-// IMAGE CONTAINER
-// ============================================
 
 .portfolio__image-container {
   position: relative;
@@ -189,10 +161,6 @@
   }
 }
 
-// ============================================
-// ARROW
-// ============================================
-
 .portfolio__image-arrow {
   position: absolute;
   top: 50%;
@@ -201,7 +169,9 @@
   height: 48px;
   transform: translateY(-50%) rotate(0deg) scale(1);
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease 0.15s;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,10 +187,6 @@
     right: -20px;
   }
 }
-
-// ============================================
-// PROJECT INFO
-// ============================================
 
 .portfolio__info {
   flex: 1;
@@ -241,10 +207,6 @@
   align-items: flex-start;
 }
 
-// ============================================
-// PROJECT NUMBER
-// ============================================
-
 .portfolio__number {
   font-family: $font-heading;
   font-weight: 700;
@@ -253,28 +215,22 @@
   display: block;
   margin-bottom: $spacing-sm;
 }
-
-// 1. ve 3. proje - numara SAĞDA
 .portfolio__project--left .portfolio__number {
   align-self: flex-end;
 }
-
-// 2. proje - numara SOLDA
 .portfolio__project--right .portfolio__number {
   align-self: flex-start;
 }
-
-// ============================================
-// PROJECT DETAILS
-// ============================================
 
 .portfolio__details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+  transform: translateX(-120px);
+  transition:
+    opacity 0.5s ease 0.15s,
+    transform 0.5s ease 0.15s;
   max-width: clamp(350px, 45vw, 550px);
 
   @include tablet {
@@ -283,24 +239,17 @@
     align-items: center;
   }
 }
-
-
-// 1. ve 3. proje - details SAĞA kaydir
 .portfolio__project--left .portfolio__details {
-  margin-left: clamp(0px, 5vw, 50px);  // Sağa kaydir
+  margin-left: clamp(0px, 5vw, 50px); // Sağa kaydir
 }
 
 .portfolio__project--right .portfolio__details {
-  transform: translateX(20px);
+  transform: translateX(200px);
 
   @include tablet {
     transform: translateX(0);
   }
 }
-
-// ============================================
-// NAME, TECH, DESCRIPTION
-// ============================================
 
 .portfolio__name {
   font-family: $font-heading;
@@ -339,10 +288,6 @@
   }
 }
 
-// ============================================
-// GITHUB BUTTON
-// ============================================
-
 .portfolio__button {
   display: inline-block;
   padding: clamp(14px, 2vw, 16px) clamp(48px, 4vw, 64px);
@@ -372,25 +317,16 @@
   }
 }
 
-// ============================================
-// MOBILE RESPONSIVE (768px ve altı)
-// ============================================
-
 @media (max-width: 768px) {
-  // Resimler her zaman renkli
   .portfolio__image {
     filter: grayscale(0);
   }
-
-  // Çerçeve her zaman görünür
   .portfolio__image-frame {
     opacity: 1;
     top: 10px;
     right: -10px;
     left: auto;
   }
-
-  // Ok altta yatay çizgi üzerinde
   .portfolio__image-arrow {
     opacity: 1;
     top: auto;
@@ -398,13 +334,9 @@
     left: 50% !important;
     right: auto !important;
   }
-
-  // Image wrapper - relative olmalı
   .portfolio__image-wrapper {
     position: relative;
   }
-
-  // Proje numarası resmin sağ üstünde
   .portfolio__number {
     position: absolute;
     top: -65px;
@@ -417,7 +349,6 @@
     align-self: auto;
   }
 
-  // Detaylar ortalanmış ama sola hizalı (linksbündig)
   .portfolio__details {
     opacity: 1;
     transform: translateX(0);
@@ -433,7 +364,6 @@
     margin-right: auto;
   }
 
-  // Yazılar sola hizalı
   .portfolio__name,
   .portfolio__tech,
   .portfolio__description {
@@ -446,21 +376,13 @@
     max-width: 100%;
     margin-top: -20px;
   }
-
-  // Buton sola hizalı
   .portfolio__button {
     align-self: flex-start;
   }
-
-  // Sağ projeler için çerçeve düzeltmesi
   .portfolio__project--right .portfolio__image-frame {
     left: auto;
     right: -10px;
   }
-
-  // ============================================
-  // 2. PROJE - SAĞA HİZALI (rechtsbündig)
-  // ============================================
   .portfolio__project--right .portfolio__details {
     align-items: flex-end;
   }
@@ -476,6 +398,6 @@
   }
 
   .portfolio__projects {
-    gap: clamp(100px, 15vw, 150px);    // ← Daha fazla boşluk
+    gap: clamp(100px, 15vw, 150px);
   }
 }

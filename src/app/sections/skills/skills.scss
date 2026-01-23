@@ -1,15 +1,5 @@
-// ============================================
-// MY SKILLS SECTION - STYLES
-// ============================================
-
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
-
-// ============================================
-// MAIN SECTION
-// ============================================
-
-// Full viewport height section with centered content
 .skills {
   height: 100vh;
   display: flex;
@@ -18,8 +8,6 @@
   position: relative;
   background-color: $color-background;
   padding: 0 $padding-horizontal;
-
-  // Tablet responsive adjustments
   @include tablet {
     padding: 0 $padding-horizontal-mobile;
     height: auto;
@@ -28,31 +16,17 @@
     padding-bottom: 40px;
   }
 }
-
-// ============================================
-// CONTAINER
-// ============================================
-
-// Main content container with bordered frame
 .skills__container {
   width: 100%;
   max-width: 1200px;
   border: 4px solid $color-text;
   padding: clamp(30px, 6vw, 70px);
   position: relative;
-
-  // Tablet responsive adjustments
   @include tablet {
     padding: clamp(24px, 4vw, 40px);
     border-width: 4px;
   }
 }
-
-// ============================================
-// TITLE
-// ============================================
-
-// Centered title positioned on top border of container
 .skills__title {
   position: absolute;
   top: 0;
@@ -66,62 +40,38 @@
   font-size: clamp(28px, 7vw, 72px);
   color: $color-text;
   white-space: nowrap;
-
-  // Green color modifier
   &.green {
     color: $color-primary;
   }
-
-  // Hover state - changes to primary color
   &:hover {
     color: $color-primary;
   }
 }
-
-// ============================================
-// SKILL GRID
-// ============================================
-
-// Grid layout for skill items - 5 columns on desktop
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: clamp(16px, 4vw, 42px);
   margin-top: $spacing-lg;
   margin-bottom: $spacing-lg;
-
-  // Tablet - 3 columns with centered last item if alone in row
   @include tablet {
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(16px, 3vw, 32px);
     margin-top: $spacing-md;
     margin-bottom: $spacing-lg;
-
-    // Center the last item if it's alone in its row (3n+1 position)
     .skills__item:last-child:nth-child(3n + 1) {
       grid-column: 2;
     }
   }
-
-  // Mobile - maintains 3 columns
   @include mobile {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-// ============================================
-// SKILL ITEM
-// ============================================
-
-// Individual skill item with icon and label
 .skills__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: $spacing-sm;
   cursor: default;
-
-  // Hover state - triggers slide animation on icon and color change on text
   &:hover {
     img {
       animation: slideIcon 0.4s ease-in-out;
@@ -131,8 +81,6 @@
       color: $color-primary;
     }
   }
-
-  // Wrapper - overflow hidden only here
   &-wrapper {
     width: 70px;
     height: 75px;
@@ -140,29 +88,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    // Tablet size adjustment
     @include tablet {
       width: 56px;
       height: 60px;
     }
   }
-
-  // Skill icon image
   img {
     width: 70px;
     height: 75px;
     object-fit: contain;
     clip-path: inset(0);
-
-    // Tablet size adjustment
     @include tablet {
       width: 56px;
       height: 60px;
     }
   }
-
-  // Skill name label
   span {
     font-family: $font-body;
     font-size: clamp(14px, 1.5vw, 18px);
@@ -170,20 +110,11 @@
     color: $color-text;
     text-align: center;
     transition: color $transition-normal;
-
-    // Tablet font size adjustment
     @include tablet {
       font-size: clamp(12px, 3vw, 16px);
     }
   }
 }
-
-// ============================================
-// SLIDE ANIMATION
-// ============================================
-
-// Playful slide animation for skill icon on hover
-// Sequence: center → right → shrink at center → left → back to center
 @keyframes slideIcon {
   0% {
     transform: translateX(0) scale(1);
@@ -201,19 +132,11 @@
     transform: translateX(0) scale(1); // start position
   }
 }
-
-// ============================================
-// BOTTOM CTA
-// ============================================
-
-// Call-to-action section at the bottom of skills container
 .skills__cta {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: $spacing-md;
-
-  // Tablet - wraps content while maintaining row layout
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;
@@ -222,8 +145,6 @@
     justify-content: center;
   }
 }
-
-// Wrapper for CTA icon with overflow hidden for animation
 .skills__cta-icon-wrapper {
   width: clamp(48px, 5vw, 64px);
   height: clamp(48px, 5vw, 64px);
@@ -231,47 +152,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  // Triggers slide animation on icon hover
   &:hover .skills__cta-icon {
     animation: slideIcon 0.4s ease-in-out;
   }
-
-  // Tablet size adjustment
   @include tablet {
     width: 64px;
     height: 64px;
   }
 }
-
-// CTA icon image
 .skills__cta-icon {
   width: clamp(48px, 5vw, 64px);
   height: clamp(48px, 5vw, 64px);
-
-  // Tablet size adjustment
   @include tablet {
     width: 64px;
     height: 64px;
   }
 }
-
-// CTA text container
 .skills__cta-text {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
   justify-content: center;
-
-  // Tablet - text fills remaining space
   @include tablet {
     flex: 1;
     justify-content: flex-start;
     font-size: 18px;
   }
 }
-
-// CTA link with animated underline effect
 .skills__cta-link {
   color: $color-primary;
   font-weight: $font-weight-regular;
@@ -282,8 +189,6 @@
   position: relative;
   vertical-align: baseline;
   overflow: hidden;
-
-  // Underline
   &::after {
     content: '';
     position: absolute;
@@ -295,11 +200,8 @@
     opacity: 0;
     transition: all 0.3s ease;
   }
-
-  // Hover state - bold text with sliding underline from left to center
   &:hover {
     font-weight: $font-weight-bold;
-    // letter-spacing: 1translateX(5px);
     transform: scaleX(1.1);
     transform-origin: left;
 
@@ -309,12 +211,6 @@
     }
   }
 }
-
-// ============================================
-// ARROW (to portfolio)
-// ============================================
-
-// Decorative arrow pointing to portfolio section
 .skills__arrow {
   position: absolute;
   left: clamp(60px, 15vw, 140px);
@@ -322,8 +218,6 @@
   width: clamp(420px, 16vw, 460px);
   height: clamp(420px, 16vw, 460px);
   pointer-events: none;
-
-  // All arrows in the same position
   img {
     position: absolute;
     width: 100%;
@@ -333,8 +227,6 @@
     right: 35px;
     pointer-events: auto;
   }
-
-  // Initial visibility states for arrow sequence
   .skills-1 {
     opacity: 1;
   }
@@ -344,8 +236,6 @@
   .skills__arrow-3 {
     opacity: 0;
   }
-
-  // HOVER - triggers arrow transition sequence
   &:hover {
     .skills__arrow-1 {
       animation: hideArrow 0.15s ease-out forwards;
@@ -360,8 +250,6 @@
     }
   }
 }
-
-// 1st arrow disappears
 @keyframes hideArrow {
   0% {
     opacity: 1;
@@ -370,8 +258,6 @@
     opacity: 0;
   }
 }
-
-// 2nd arrow appears then disappears
 @keyframes showHideArrow {
   0% {
     opacity: 0;
@@ -386,8 +272,6 @@
     opacity: 0;
   }
 }
-
-// 3rd arrow appears and stays
 @keyframes showArrow {
   0% {
     opacity: 0;

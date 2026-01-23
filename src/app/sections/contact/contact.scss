@@ -1,13 +1,5 @@
-// ============================================
-// CONTACT SECTION - STYLES
-// ============================================
-
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
-
-// ============================================
-// MAIN SECTION
-// ============================================
 
 .contact {
   position: relative;
@@ -16,10 +8,6 @@
   margin-bottom: 0;
   padding-bottom: 0;
 }
-
-// ============================================
-// BACKGROUND
-// ============================================
 
 .contact__background {
   position: absolute;
@@ -38,10 +26,6 @@
   }
 }
 
-// ============================================
-// CONTAINER
-// ============================================
-
 .contact .container {
   position: relative;
   z-index: 1;
@@ -52,20 +36,12 @@
   padding-bottom: 0px;
 }
 
-// ============================================
-// CONTENT
-// ============================================
-
 .contact__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: clamp(16px, 5vw, 40px);
 }
-
-// ============================================
-// HEADER
-// ============================================
 
 .contact__header {
   width: 100%;
@@ -83,10 +59,6 @@
     color: $color-primary;
   }
 }
-
-//  ============================================
-// FORM WRAPPER (Orta)
-// ============================================
 
 .contact__form-wrapper {
   width: 100%;
@@ -112,10 +84,6 @@
   text-align: center;
 }
 
-// ============================================
-// INPUT GROUP
-// ============================================
-
 .contact__input-group {
   position: relative;
   margin-top: clamp(16px, 3vw, 24px);
@@ -132,8 +100,6 @@
     font-size: clamp(14px, 2vw, 16px);
     color: #ffffff;
     outline: none;
-
-    // Autofill stilini geçersiz kıl
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
@@ -146,20 +112,14 @@
     &::placeholder {
       color: transparent;
     }
-
-    // Hover - sadece kutu çizgisi, label yerinde kalır
     &:hover {
       outline: clamp(2px, 0.5vw, 4px) solid $color-background;
       outline-offset: clamp(-2px, -0.5vw, -4px);
     }
-
-    // Focus -  sadece outline çerçeve
     &:focus {
       outline: clamp(2px, 0.5vw, 4px) solid $color-background;
       outline-offset: clamp(-2px, -0.5vw, -4px);
     }
-
-    // Sadece focus ve has-value'da label yukarı
     &:focus + label,
     &.has-value + label {
       top: clamp(-8px, -1vw, -10px);
@@ -185,8 +145,6 @@
     pointer-events: none;
     transition: all 0.3s ease;
   }
-
-  // Error State
   &.error {
     margin-top: clamp(24px, 4vw, 34px);
 
@@ -207,8 +165,6 @@
       padding: 0 clamp(4px, 1vw, 8px);
     }
   }
-
-  // Success State
   &.success {
     input,
     textarea {
@@ -217,8 +173,6 @@
       outline-offset: clamp(-2px, -0.4vw, -3px);
       background-color: #000000;
       color: #ffffff;
-
-      // Tarayıcı autofill stilini geçersiz kıl
       &:-webkit-autofill,
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus,
@@ -252,10 +206,6 @@
   }
 }
 
-// ============================================
-// INPUT icon
-// ============================================
-
 .contact__input-icon {
   position: absolute;
   right: clamp(12px, 2vw, 16px);
@@ -276,10 +226,6 @@
   top: clamp(8px, 1.5vw, 12px);
 }
 
-// ============================================
-// ERROR MESSAGE
-// ============================================
-
 .contact__error-message {
   display: block;
   font-family: $font-body;
@@ -288,10 +234,6 @@
   margin-top: 2px;
   text-align: left;
 }
-
-// ============================================
-// CHECKBOX GROUP
-// ============================================
 
 .contact__checkbox-group {
   display: flex;
@@ -350,10 +292,6 @@
   }
 }
 
-// ============================================
-// SUBMIT BUTTON
-// ============================================
-
 .contact__submit-btn {
   align-self: center;
   padding: clamp(10px, 1.5vw, 14px) clamp(24px, 4vw, 36px);
@@ -384,10 +322,6 @@
   }
 }
 
-// ============================================
-// ARROW
-// ============================================
-
 .contact__arrow {
   align-self: flex-end;
   margin-top: auto;
@@ -405,10 +339,6 @@
   }
 }
 
-// ============================================
-// MOBILE RESPONSIVE (768px altı için ek ayarlar)
-// ============================================
-
 @media (max-width: 768px) {
   .contact__title {
     animation: blink 2.5s ease-in-out infinite;
@@ -418,27 +348,21 @@
       color: $color-primary; // Yeşil başla
     }
     60% {
-      // 1500ms / 2500ms = %60
       color: $color-primary; // Yeşil devam
     }
     60.1% {
       color: $color-background; // Beyaz/krem geçiş
     }
     100% {
-      // 1000ms beyaz
       color: $color-background;
     }
   }
-
-  // Mobile'da input hover çerçeve yok
   .contact__input-group {
     input:hover,
     textarea:hover {
       outline: none;
       border-bottom: 1px solid $color-background;
     }
-
-    // Focus funktioniert auf Mobile
     input:focus,
     textarea:focus {
       outline: 4px solid $color-background;

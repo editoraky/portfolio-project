@@ -1,26 +1,18 @@
-<!-- ============================================
-     CONTACT SECTION
-     ============================================ -->
 <section class="contact" id="contact">
-  <!-- Siyah Arka Plan SVG -->
   <div class="contact__background">
     <img src="assets/icon/hintergrund-contact.svg" alt="" class="contact__bg-image" />
   </div>
 
   <div class="container">
     <div class="contact__content">
-      <!-- Sol Taraf - Başlık -->
       <div class="contact__header">
         <h2 class="contact__title">{{ contactTitle }}</h2>
       </div>
-
-      <!-- Sağ Taraf - Form -->
       <div class="contact__form-wrapper">
         <h3 class="contact__form-title">{{ texts().contact.formTitle }}</h3>
         <p class="contact__form-subtitle">{{ texts().contact.formSubtitle }}</p>
 
         <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-          <!-- Name Input -->
           <div class="contact__input-group" [class.error]="nameError" [class.success]="nameSuccess">
             <input
               type="text"
@@ -43,8 +35,6 @@
               texts().contact.errorName
             }}</span>
           </div>
-
-          <!-- Email Input -->
           <div
             class="contact__input-group"
             [class.error]="emailError"
@@ -71,8 +61,6 @@
               texts().contact.errorEmail
             }}</span>
           </div>
-
-          <!-- Message Textarea -->
           <div
             class="contact__input-group contact__input-group--textarea"
             [class.error]="messageError"
@@ -99,8 +87,6 @@
               texts().contact.errorMessage
             }}</span>
           </div>
-
-          <!-- Privacy Checkbox -->
           <div
             class="contact__checkbox-group"
             [class.error]="privacyError"
@@ -146,16 +132,12 @@
               texts().contact.errorPrivacy
             }}</span>
           </div>
-
-          <!-- Submit Button -->
           <button type="submit" class="contact__submit-btn" [class.active]="isFormValid">
             {{ submitButtonText }}
           </button>
         </form>
       </div>
     </div>
-
-    <!-- Yukarı Ok -->
     <a href="#hero" class="contact__arrow">
       <img src="assets/icon/pfeile-contact.svg" alt="Back to top" class="contact__arrow-icon" />
     </a>

@@ -1,17 +1,9 @@
-<!--
-  HEADER KOMPONENTE
-  Sticky Header mit Logo, Sprachenwechsel und Navigation
--->
 <header class="header">
   <div class="header__container container">
-    <!-- Logo -->
     <a routerLink="/" class="header__logo" aria-label="Zur Startseite">
       <img src="assets/icon/ak-logo.svg" alt="AK Logo" class="header__logo-img" />
     </a>
-
-    <!-- Navigation -->
     <nav class="header__nav">
-      <!-- Sprachenwechsel - Desktop -->
       <div class="header__language">
         <button
           class="header__language-btn"
@@ -30,8 +22,6 @@
           DE
         </button>
       </div>
-
-      <!-- Sprachenwechsel - Mobile (menü açıkken görünür) -->
       <div class="header__language-mobile" [class.visible]="isMenuOpen">
         <button
           class="header__language-btn"
@@ -48,8 +38,6 @@
           DE
         </button>
       </div>
-
-      <!-- Hamburger Menü -->
       <button
         class="header__menu-btn"
         [class.open]="isMenuOpen"
@@ -63,12 +51,7 @@
     </nav>
   </div>
 </header>
-
-<!--
-  MOBILE NAVIGATION OVERLAY
--->
 <div class="mobile-nav" [class.open]="isMenuOpen">
-  <!-- Menü Links -->
   <nav class="mobile-nav__content">
     <a
       #aboutLink
@@ -95,8 +78,6 @@
       >{{ texts().header.portfolioLink }}</a
     >
   </nav>
-
-  <!-- Contact Bar -->
   <div class="mobile-nav__contact">
     <img src="assets/icon/rectangle.svg" alt="" class="mobile-nav__contact-bg" />
 
@@ -105,7 +86,9 @@
         <a href="#contact" class="mobile-nav__sayhi" (click)="closeMenu()">
           {{ texts().header.sayHi }}
         </a>
-        <a href="mailto:contact@akin-kuelhanbey.com" class="mobile-nav__email">contact&#64;akin-kuelhanbey.com</a>
+        <a href="mailto:contact@akin-kuelhanbey.com" class="mobile-nav__email"
+          >contact&#64;akin-kuelhanbey.com</a
+        >
       </div>
 
       <div class="mobile-nav__contact-icon">

@@ -1,10 +1,4 @@
 @use 'variables' as *;
-
-// ==============================================
-// KEYFRAME ANIMATIONEN
-// ==============================================
-
-// Sanftes Einblenden von unten (für Scroll-Animationen)
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -15,8 +9,6 @@
     transform: translateY(0);
   }
 }
-
-// Sanftes Einblenden (ohne Bewegung)
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -25,8 +17,6 @@
     opacity: 1;
   }
 }
-
-// Pfeil-Animation (auf und ab)
 @keyframes bounce {
   0%,
   100% {
@@ -36,8 +26,6 @@
     transform: translateY(10px);
   }
 }
-
-// Sanftes Pulsieren (für Hover-Hinweise)
 @keyframes pulse {
   0%,
   100% {
@@ -47,12 +35,6 @@
     transform: scale(1.05);
   }
 }
-
-// ==============================================
-// SCROLL-ANIMATIONEN (Klassen)
-// ==============================================
-
-// Basis-Klasse: Element ist unsichtbar
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -60,14 +42,10 @@
     opacity 0.6s ease,
     transform 0.6s ease;
 }
-
-// Wenn Element sichtbar wird (via JavaScript)
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-// Verzögerte Animation (für gestaffelte Effekte)
 .animate-delay-1 {
   transition-delay: 0.1s;
 }
@@ -79,12 +57,6 @@
 .animate-delay-3 {
   transition-delay: 0.3s;
 }
-
-// ==============================================
-// HOVER-ANIMATIONEN
-// ==============================================
-
-// Button-Hover (dezent, 125ms)
 .hover-lift {
   transition:
     transform $transition-normal,
@@ -95,8 +67,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 }
-
-// Link-Hover mit Unterstrich-Animation
 .hover-underline {
   position: relative;
 
@@ -115,8 +85,6 @@
     width: 100%;
   }
 }
-
-// Bild-Hover (leichtes Zoom)
 .hover-zoom {
   overflow: hidden;
 
@@ -128,22 +96,12 @@
     transform: scale(1.05);
   }
 }
-
-// ==============================================
-// SPEZIELLE ELEMENT-ANIMATIONEN
-// ==============================================
-
-// Scroll-Pfeil Animation (bouncing)
 .scroll-indicator {
   animation: bounce 2s ease-in-out infinite;
 }
-
-// Hero-Titel Animation beim Laden
 .hero-animate {
   animation: fadeInUp 0.8s ease forwards;
 }
-
-// Gestaffelte Animation für Skill-icon
 .skill-icon {
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
@@ -154,22 +112,12 @@
     }
   }
 }
-
-// ==============================================
-// ÜBERGANGS-UTILITIES
-// ==============================================
-
-// Schneller Übergang (75ms) - für kleine Elemente
 .transition-fast {
   transition: all $transition-fast;
 }
-
-// Normaler Übergang (125ms) - Standard
 .transition-normal {
   transition: all $transition-normal;
 }
-
-// Kein Übergang
 .transition-none {
   transition: none;
 }

@@ -12,10 +12,7 @@ import { LanguageService } from '../../core/services/language.service';
   styleUrl: './contact.scss',
 })
 export class ContactComponent implements OnInit {
-  // Übersetzungsservice injizieren
   private languageService = inject(LanguageService);
-
-  // Texte in aktueller Sprache (Signal)
   texts = this.languageService.texts;
 
   formData = {
@@ -24,36 +21,22 @@ export class ContactComponent implements OnInit {
     message: '',
     privacy: false,
   };
-
-  // Error states
   nameError = false;
   emailError = false;
   messageError = false;
   privacyError = false;
-
-  // Success states
   nameSuccess = false;
   emailSuccess = false;
   messageSuccess = false;
-
-  // Hover states
   privacyHover = false;
-
-  // Mobile detection
   isMobile: boolean = false;
-
-  // Form geçerliliği kontrolü
   get isFormValid(): boolean {
     return this.nameSuccess && this.emailSuccess && this.messageSuccess && this.formData.privacy;
   }
-
-  // Dynamischer Titel (Desktop/Mobile)
   get contactTitle(): string {
     const t = this.texts();
     return this.isMobile ? t.contact.titleMobile : t.contact.title;
   }
-
-  // Dynamischer Button-Text (Desktop/Mobile)
   get submitButtonText(): string {
     const t = this.texts();
     return this.isMobile ? t.contact.submitButtonMobile : t.contact.submitButton;
@@ -78,9 +61,7 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  onFocus(field: string) {
-    // Focus logic
-  }
+  onFocus(field: string) {}
 
   onBlur(field: string) {
     switch (field) {

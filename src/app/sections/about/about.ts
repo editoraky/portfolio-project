@@ -40,20 +40,14 @@ export class AboutComponent implements OnInit, OnDestroy {
   checkScreenSize() {
     const wasMobile = this.isMobile;
     this.isMobile = window.innerWidth <= 768;
-
-    // Mobile'a geçince animasyonları başlat
     if (this.isMobile && !wasMobile) {
       this.startTitleAnimation();
       this.startFrameAnimation();
     }
-
-    // Desktop'a geçince animasyonları durdur
     if (!this.isMobile && wasMobile) {
       this.stopTitleAnimation();
       this.stopFrameAnimation();
     }
-
-    // İlk yüklemede mobile ise animasyonları başlat
     if (this.isMobile && !wasMobile && !this.titleInterval) {
       this.startTitleAnimation();
       this.startFrameAnimation();

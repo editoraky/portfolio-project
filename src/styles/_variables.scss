@@ -1,35 +1,10 @@
-// ==============================================
-// FARBEN
-// ==============================================
-
-// Primärfarbe - das Türkis aus dem Design
 $color-primary: #00bc8f;
-
-// Hintergrundfarben
 $color-background: #fffcf3; // Creme-Hintergrund der Seite
 $color-background-dark: #000000; // Dunkler Footer-Hintergrund
-
-// Textfarben
 $color-text: #000000; // Haupttext (Schwarz)
 $color-text-light: #fffcf3; // Text auf dunklem Hintergrund
-
-
-// ==============================================
-// SCHRIFTARTEN
-// ==============================================
-
-// Syne für Überschriften (aus Google Fonts)
 $font-heading: 'Syne', sans-serif;
-
-// Overpass für Fließtext (aus Google Fonts)
 $font-body: 'Overpass', sans-serif;
-
-
-// ==============================================
-// SCHRIFTGRÖSSEN
-// ==============================================
-
-// Desktop-Größen
 $font-size-hero: 96px; // "Frontend Developer" Haupttitel
 $font-size-h1: 64px; // Sektions-Überschriften
 $font-size-h2: 32px; // Unter-Überschriften
@@ -37,51 +12,20 @@ $font-size-h3: 24px; // Kleine Überschriften
 $font-size-body: 18px; // Normaler Text
 $font-size-small: 16px; // Kleinerer Text
 
-
-// ==============================================
-// SCHRIFTGEWICHTE
-// ==============================================
-
 $font-weight-regular: 400; // Overpass normal
 $font-weight-bold: 700; // Syne bold (Monate/Jahre)
 $font-weight-extrabold: 800; // Syne extrabold (Überschriften)
-
-
-// ==============================================
-// ABSTÄNDE (Spacing)
-// ==============================================
 
 $spacing-xs: 8px;
 $spacing-sm: 16px;
 $spacing-md: 24px;
 $spacing-lg: 48px;
 $spacing-xl: 96px;
-
-
-// ==============================================
-// LAYOUT
-// ==============================================
-
-// Maximale Breite des Contents (aus deiner Checkliste!)
 $max-content-width: 1440px;
-
-// Abstand zum Rand
 $padding-horizontal: 80px; // Desktop
 $padding-horizontal-mobile: 10px; // Mobile
-
-
-// ==============================================
-// ÜBERGÄNGE (Transitions)
-// ==============================================
-
-// Aus deiner Checkliste: 75ms - 125ms
 $transition-fast: 75ms ease-in-out;
 $transition-normal: 125ms ease-in-out;
-
-
-// ==============================================
-// BREAKPOINTS (Responsive Design)
-// ==============================================
 
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;

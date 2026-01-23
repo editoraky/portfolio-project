@@ -1,13 +1,5 @@
-// ============================================
-// REFERENCES SECTION - STYLES
-// ============================================
-
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
-
-// ============================================
-// MAIN SECTION
-// ============================================
 
 .references {
   min-height: 100vh;
@@ -29,10 +21,6 @@
     }
   }
 }
-
-// ============================================
-// HEADER
-// ============================================
 
 .references__header {
   text-align: center;
@@ -67,10 +55,6 @@
   line-height: 1.2;
 }
 
-// ============================================
-// CARDS CONTAINER
-// ============================================
-
 .references__cards {
   display: flex;
   gap: clamp(24px, 3vw, 40px);
@@ -82,10 +66,6 @@
     align-items: center;
   }
 }
-
-// ============================================
-// SINGLE CARD
-// ============================================
 
 .references__card {
   flex: 1;
@@ -103,7 +83,8 @@
     border-color: $color-primary;
 
     .references__quote-icon {
-      filter: invert(52%) sepia(84%) saturate(2279%) hue-rotate(130deg) brightness(95%) contrast(101%);
+      filter: invert(52%) sepia(84%) saturate(2279%) hue-rotate(130deg) brightness(95%)
+        contrast(101%);
     }
 
     .references__title {
@@ -117,10 +98,6 @@
   }
 }
 
-// ============================================
-// QUOTE ICON
-// ============================================
-
 .references__quote {
   margin-top: $spacing-sm;
   margin-bottom: $spacing-sm;
@@ -132,10 +109,6 @@
   filter: brightness(0);
   transition: filter 0.3s ease;
 }
-
-// ============================================
-// NAME & ROLE
-// ============================================
 
 .references__name {
   font-family: $font-heading;
@@ -153,10 +126,6 @@
   margin-bottom: $spacing-md;
 }
 
-// ============================================
-// TEXT
-// ============================================
-
 .references__text {
   font-family: $font-body;
   font-size: clamp(16px, 1.5vw, 18px);
@@ -164,10 +133,6 @@
   color: $color-text;
   line-height: 1.2;
 }
-
-// ============================================
-// ARROW
-// ============================================
 
 .references__arrow {
   align-self: flex-end;
@@ -181,9 +146,21 @@
     height: auto;
   }
 
-  .references__arrow-1 { opacity: 1; }
-  .references__arrow-2 { opacity: 0; position: absolute; top: 0; left: 0; }
-  .references__arrow-3 { opacity: 0; position: absolute; top: 0; left: 0; }
+  .references__arrow-1 {
+    opacity: 1;
+  }
+  .references__arrow-2 {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .references__arrow-3 {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
   &:hover {
     .references__arrow-1 {
@@ -200,30 +177,38 @@
   }
 }
 
-// ============================================
-// ARROW ANIMATIONS
-// ============================================
-
 @keyframes hideArrow {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes showHideArrow {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  60% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes showArrow {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-// ============================================
-// MOBILE RESPONSIVE
-// ============================================
 
 @media (max-width: 768px) {
   .references__arrow {
@@ -232,10 +217,6 @@
     width: clamp(120px, 40vw, 200px);
   }
 }
-
-// ============================================
-// MOBILE RESPONSIVE (768px ve altı)
-// ============================================
 
 @media (max-width: 768px) {
   .references {
@@ -287,7 +268,8 @@
     }
 
     &:hover .references__quote-icon {
-      filter: invert(52%) sepia(84%) saturate(2279%) hue-rotate(130deg) brightness(95%) contrast(101%);
+      filter: invert(52%) sepia(84%) saturate(2279%) hue-rotate(130deg) brightness(95%)
+        contrast(101%);
     }
   }
 

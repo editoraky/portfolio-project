@@ -1,10 +1,6 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-// ============================================
-// HERO SECTION
-// ============================================
-
 .hero {
   height: 100vh;
   display: flex;
@@ -20,14 +16,10 @@
     padding-top: 30vh;
     align-items: flex-start;
   }
-
-  // ========================================
-  // INNER CONTAINER - Max-width sınırı
-  // ========================================
   &__inner {
     position: relative;
     width: 100%;
-    max-width: $max-content-width;  // Content sınırı
+    max-width: $max-content-width; // Content sınırı
     height: 100%;
     display: flex;
     align-items: center;
@@ -37,13 +29,9 @@
       align-items: flex-start;
     }
   }
-
-  // ========================================
-  // EMAIL - Inner'a göre konumlanır
-  // ========================================
   &__email {
     position: absolute;
-    left: 30px;           // Inner'ın sol kenarından
+    left: 30px; // Inner'ın sol kenarından
     bottom: 10%;
     transform: rotate(-90deg);
     transform-origin: left center;
@@ -60,35 +48,27 @@
 
     @include tablet {
       left: 10px;
-      bottom:25%;
+      bottom: 25%;
       font-size: $font-size-small;
       transform-origin: left bottom;
     }
-
-    // Small mobile (480px ve altı)
-  @media (max-width: 480px) {
-    left: 5px;
-    bottom: 25%;
-    font-size: 12px;
+    @media (max-width: 480px) {
+      left: 5px;
+      bottom: 25%;
+      font-size: 12px;
+    }
+    @media (max-width: 375px) {
+      left: 3px;
+      bottom: 29%;
+      font-size: 11px;
+    }
   }
-
-  // Extra small (375px ve altı)
-  @media (max-width: 375px) {
-    left: 3px;
-    bottom: 29%;
-    font-size: 11px;
-  }
-  }
-
-  // ========================================
-  // HAUPTINHALT - Container
-  // ========================================
   &__content {
     text-align: center;
     max-width: 1000px;
     width: 100%;
 
-     @include tablet {
+    @include tablet {
       text-align: right;
       max-width: 100%;
     }
@@ -97,10 +77,6 @@
       text-align: center;
     }
   }
-
-  // ========================================
-  // TITEL - Kleinbuchstaben (kein uppercase!)
-  // ========================================
   &__title {
     font-family: $font-heading;
     font-weight: $font-weight-extrabold;
@@ -113,10 +89,6 @@
   &__title-line {
     display: block;
   }
-
-  // ========================================
-  // NAME WRAPPER - Linie + Name
-  // ========================================
   &__name-wrapper {
     display: flex;
     align-items: center;
@@ -155,10 +127,6 @@
       font-size: clamp(14px, 4vw, 22px);
     }
   }
-
-  // ========================================
-  // SCROLL DOWN - Rechts unten mit Animation
-  // ========================================
   &__scroll {
     position: absolute;
     right: 20px;
@@ -173,8 +141,6 @@
       bottom: 100px;
     }
   }
-
-  // Unsichtbare Box für Pfeil
   &__scroll-box {
     width: 60px;
     height: 190px;
@@ -189,8 +155,6 @@
       height: 150px;
     }
   }
-
-  // Animierter Pfeil (fließt nach unten)
   &__scroll-arrow {
     width: 50px;
     height: auto;
@@ -201,8 +165,6 @@
       width: 120px;
     }
   }
-
-  // Scroll Down Text SVG
   &__scroll-text {
     width: 45px;
     height: auto;
@@ -214,10 +176,6 @@
     }
   }
 }
-
-// ========================================
-// SCROLL ARROW ANIMATION
-// ========================================
 @keyframes scrollArrowFlow {
   0% {
     transform: translateY(-100px);
@@ -225,22 +183,21 @@
   65% {
     transform: translateY(280px);
   }
-  65.1%, 100% {
+  65.1%,
+  100% {
     transform: translateY(-100px);
   }
 }
-
-// ========================================
-// SCROLL TEXT ANIMATION
-// ========================================
 @keyframes scrollTextPulse {
-  0%, 60% {
+  0%,
+  60% {
     transform: translateX(0);
   }
   70% {
     transform: translateX(4px);
   }
-  85%, 100% {
+  85%,
+  100% {
     transform: translateX(0);
   }
 }
