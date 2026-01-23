@@ -212,8 +212,8 @@ export const TRANSLATIONS = {
       de: 'Akin war ein großartiger Teamkollege bei DA. Sein positives Engagement und seine Bereitschaft, Verantwortung zu übernehmen, trugen wesentlich dazu bei, dass wir unsere Ziele erreichten.',
     },
     testimonial3: {
-      en: 'It was a great pleasure to work with Akin. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.',
-      de: 'Es war eine große Freude, mit Akin zu arbeiten. Er versteht es, Teammitglieder zu motivieren und zu ermutigen, ihr Bestes zu geben, und bringt immer neue Ideen ein. Was das Wohlbefinden der Gruppenmitglieder betrifft, war er stets präsent und bereit zuzuhören und anderen zu helfen – mit viel Humor.',
+      en: 'Working with Akin was a real pleasure. With humor, creativity, and expertise, he creates motivation, focus, and real progress within the team.',
+      de: 'Die Zusammenarbeit mit Akin war eine große Freude. Mit Humor, Ideenreichtum und Know-how schafft er Motivation, Fokus und echten Fortschritt im Team.',
     },
   },
   // ------------------------------------------

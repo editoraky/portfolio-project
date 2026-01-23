@@ -438,6 +438,13 @@
       border-bottom: 1px solid $color-background;
     }
 
+    // Focus funktioniert auf Mobile
+    input:focus,
+    textarea:focus {
+      outline: 4px solid $color-background;
+      outline-offset: -4px;
+    }
+
     &.error input:hover,
     &.error textarea:hover {
       outline: 4px solid $color-background;

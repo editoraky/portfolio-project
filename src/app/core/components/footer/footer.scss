@@ -70,6 +70,18 @@
   color: $color-text-light;
 }
 
+.footer__email {
+  font-family: $font-body;
+  font-size: $font-size-small;
+  color: $color-text-light;
+  text-decoration: none;
+  transition: color $transition-normal;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
 
 // ============================================
 // RECHTE SEITE (Social Links & Legal)

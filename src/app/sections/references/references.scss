@@ -129,7 +129,7 @@
 .references__quote-icon {
   width: clamp(10px, 3vw, 30px);
   height: auto;
-  filter: brightness(0); 
+  filter: brightness(0);
   transition: filter 0.3s ease;
 }
 
@@ -240,9 +240,9 @@
 @media (max-width: 768px) {
   .references {
     min-height: auto;
-    padding: 60px $padding-horizontal-mobile;
+    padding: 60px $padding-horizontal-mobile 140px $padding-horizontal-mobile;
     align-items: flex-start;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .references__header {
@@ -251,9 +251,9 @@
     width: 100%;
   }
 
- .references__title {
-    font-size: clamp(26px, 8vw, 56px);    // ← Daha küçük minimum
-    word-wrap: break-word;                 // ← Kelime kırılması
+  .references__title {
+    font-size: clamp(26px, 8vw, 56px);
+    word-wrap: break-word;
   }
 
   .references__subtitle {
@@ -264,21 +264,26 @@
   .references__cards {
     flex-direction: column;
     width: 100%;
-    gap: $spacing-lg;
+    gap: $spacing-md;
   }
 
   .references__card {
     max-width: 100%;
     width: 100%;
+    aspect-ratio: 1 / 1;
     border-width: 4px;
     border-color: $color-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
 
     &:hover {
-        border-color: $color-primary;   
+      border-color: $color-primary;
     }
 
     .references__quote-icon {
-        filter: brightness(0);
+      filter: brightness(0);
     }
 
     &:hover .references__quote-icon {
@@ -286,23 +291,37 @@
     }
   }
 
+  .references__quote {
+    margin-top: 0;
+    margin-bottom: $spacing-xs;
+  }
+
+  .references__name {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .references__role {
+    font-size: clamp(12px, 3.5vw, 14px);
+    margin-bottom: $spacing-sm;
+  }
+
   .references__text {
     text-align: left;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.3;
   }
 
   .references__arrow {
     position: relative;
-    right: auto;
-    bottom: auto;
     align-self: flex-start;
-    margin-top: -30px;    // ← Responsive margin
-    width: clamp(200px, 60vw, 420px);
-    height: clamp(100px, 30vw, 180px);
+    margin-top: clamp(60px, 15vw, 120px);
+    margin-left: clamp(-85%, -90vw, -80%);
+    width: 170%;
+    height: auto;
 
     img {
       width: 100%;
       height: auto;
-      left: 0;
     }
   }
 }

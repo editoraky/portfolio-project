@@ -271,7 +271,8 @@
 
   .about__title {
     font-size: clamp(28px, 10vw, 56px);
-    margin-bottom: 56px;
+    margin-bottom: 48
+    px;
     white-space: nowrap;
     text-align: center;
     width: 100%;
@@ -282,6 +283,7 @@
     max-width: 100%;
     order: 1;
     padding-left: $padding-horizontal-mobile;
+    padding-right: $padding-horizontal-mobile;
   }
 
   .about__title {
@@ -329,7 +331,7 @@
 
     &:hover {
       padding: clamp(20px, 6vw, 22px) clamp(100px, 22vw, 140px);
-      font-weight: 700                                     
+      font-weight: 700
     }
 
   &:active {
@@ -346,7 +348,7 @@
     max-width: 400px;
     margin-top: 0;
     align-self: center;
-  margin: 0 auto; 
+  margin: 0 auto;
   }
 
   .about__image {
@@ -404,7 +406,9 @@
 
   .about__title {
     font-size: clamp(24px, 9vw, 36px);
-    white-space: nowrap; 
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
   }
 
   .about__content {
