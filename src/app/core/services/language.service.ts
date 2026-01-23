@@ -46,6 +46,9 @@ export interface TranslatedTexts {
     errorPrivacy: string;
     submitButton: string;
     submitButtonMobile: string;
+    successTitle: string;
+    successMessage: string;
+    successButton: string;
   };
   references: {
     title: string;
@@ -136,6 +139,9 @@ export class LanguageService {
         errorPrivacy: TRANSLATIONS.contact.errorPrivacy[lang],
         submitButton: TRANSLATIONS.contact.submitButton[lang],
         submitButtonMobile: TRANSLATIONS.contact.submitButtonMobile[lang],
+        successTitle: TRANSLATIONS.contact.successTitle[lang],
+        successMessage: TRANSLATIONS.contact.successMessage[lang],
+        successButton: TRANSLATIONS.contact.successButton[lang],
       },
       references: {
         title: TRANSLATIONS.references.title[lang],

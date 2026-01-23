@@ -29,6 +29,8 @@ export class ContactComponent implements OnInit {
   emailSuccess = false;
   messageSuccess = false;
   privacyHover = false;
+  showSuccessModal = false;
+  isSubmitting = false;
   isMobile: boolean = false;
   get isFormValid(): boolean {
     return this.nameSuccess && this.emailSuccess && this.messageSuccess && this.formData.privacy;
@@ -113,16 +115,37 @@ export class ContactComponent implements OnInit {
     this.privacyError = false;
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.validateName();
     this.validateEmail();
     this.validateMessage();
     this.privacyError = !this.formData.privacy;
 
-    if (!this.nameError && !this.emailError && !this.messageError && !this.privacyError) {
-      console.log('Form submitted:', this.formData);
-      this.resetForm();
+    if (this.isFormValid) {
+      this.isSubmitting = true;
+      await this.sendEmail();
     }
+  }
+
+  async sendEmail() {
+    try {
+      const response = await fetch('send-mail.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.formData),
+      });
+      if (response.ok) {
+        this.showSuccessModal = true;
+        this.resetForm();
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+    this.isSubmitting = false;
+  }
+
+  closeModal() {
+    this.showSuccessModal = false;
   }
 
   resetForm() {

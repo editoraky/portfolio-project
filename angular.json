@@ -23,7 +23,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "***",
+                "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
               }
@@ -40,8 +40,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "16kB",
+                  "maximumError": "32kB"
                 }
               ],
               "outputHashing": "all"

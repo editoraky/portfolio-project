@@ -160,6 +160,18 @@ export const TRANSLATIONS = {
       en: 'Say hello ;)',
       de: 'Sag hallo ;)',
     },
+    successTitle: {
+      en: 'Message Sent!',
+      de: 'Nachricht gesendet!',
+    },
+    successMessage: {
+      en: 'Thank you for your message. I will get back to you soon.',
+      de: 'Vielen Dank für Ihre Nachricht. Ich melde mich bald bei Ihnen.',
+    },
+    successButton: {
+      en: 'OK',
+      de: 'OK',
+    },
   },
   references: {
     title: {

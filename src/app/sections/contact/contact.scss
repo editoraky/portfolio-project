@@ -339,6 +339,85 @@
   }
 }
 
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: $color-text;
+  padding: clamp(32px, 5vw, 48px);
+  text-align: center;
+  max-width: 90%;
+  width: clamp(300px, 80vw, 450px);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-icon {
+  width: clamp(48px, 8vw, 64px);
+  height: clamp(48px, 8vw, 64px);
+  margin: 0 auto clamp(16px, 3vw, 24px);
+
+  img {
+    width: 100%;
+    height: 100%;
+    filter: invert(55%) sepia(100%) saturate(400%) hue-rotate(75deg);
+  }
+}
+
+.modal-title {
+  font-family: $font-heading;
+  font-weight: $font-weight-extrabold;
+  font-size: clamp(24px, 5vw, 36px);
+  color: $color-primary;
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.modal-text {
+  font-family: $font-body;
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: $color-background;
+  margin-bottom: clamp(24px, 4vw, 32px);
+  line-height: 1.5;
+}
+
+.modal-button {
+  font-family: $font-body;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  background: $color-primary;
+  border: none;
+  padding: clamp(12px, 2vw, 16px) clamp(32px, 5vw, 48px);
+  cursor: pointer;
+  transition: all 0.125s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+
 @media (max-width: 768px) {
   .contact__title {
     animation: blink 2.5s ease-in-out infinite;
