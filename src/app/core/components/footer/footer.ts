@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -12,4 +12,14 @@ import { LanguageService } from '../../services/language.service';
 export class FooterComponent {
   private languageService = inject(LanguageService);
   texts = this.languageService.texts;
+  private router = inject(Router);
+
+  scrollToTop(): void {
+    const isOnHomePage = this.router.url === '/' || this.router.url.startsWith('/#');
+    if (isOnHomePage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
 }
