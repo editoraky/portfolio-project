@@ -6,6 +6,34 @@
   background-color: $color-background-dark;
   padding: $spacing-lg 0;
   margin-top: -1px;
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: $color-background-dark;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+  }
+
+  @include tablet {
+    &::before {
+      top: -60px;
+      height: 60px;
+    }
+  }
+
+  @include mobile {
+    &::before {
+      top: -40px;
+      height: 40px;
+    }
+  }
 }
 
 .footer__container {

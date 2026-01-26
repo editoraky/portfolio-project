@@ -194,22 +194,21 @@
   margin-right: 15px;
   position: relative;
   vertical-align: baseline;
-  overflow: hidden;
+
   &::after {
     content: '';
     position: absolute;
     bottom: -2px;
-    left: -20%;
+    left: 0;
     width: 50%;
     height: 2px;
     background-color: $color-primary;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: left 0.3s ease, opacity 0.1s ease;
   }
+
   &:hover {
     font-weight: $font-weight-bold;
-    transform: scaleX(1.1);
-    transform-origin: left;
 
     &::after {
       opacity: 1;
