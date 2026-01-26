@@ -2,19 +2,14 @@
 @use '../../../styles/mixins' as *;
 
 .skills {
-  padding-top: clamp(80px, 10vw, 120px);
-  padding-bottom: clamp(80px, 10vw, 120px);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   background-color: $color-background;
-  padding: 0 $padding-horizontal;
+  padding: clamp(80px, 10vw, 120px) $padding-horizontal;
   @include tablet {
-    padding: 0 $padding-horizontal-mobile;
-    height: auto;
-    padding-top: clamp(60px, 10vw, 100px);
-    padding-bottom: clamp(60px, 10vw, 100px);
+    padding: clamp(60px, 10vw, 100px) $padding-horizontal-mobile;
   }
 }
 
