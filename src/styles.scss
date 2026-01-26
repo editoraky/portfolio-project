@@ -106,3 +106,28 @@ a {
     display: none !important;
   }
 }
+
+section[id] {
+  scroll-margin-top: 85px;
+}
+
+@media (max-width: 400px) {
+  .about__arrow,
+  .skills__arrow,
+  .references__arrow {
+    max-width: 80vw;
+    transform: scale(0.6);
+    transform-origin: left center;
+  }
+
+  .about__arrow img,
+  .skills__arrow img,
+  .references__arrow img {
+    max-width: 100%;
+  }
+
+  .skills__container {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+}

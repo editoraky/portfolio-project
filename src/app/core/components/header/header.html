@@ -57,6 +57,7 @@
       #aboutLink
       class="mobile-nav__link"
       href="#about"
+      (click)="onNavClick($event, '#about')"
       (touchstart)="onMobileLinkDown($event, aboutLink)"
       (touchend)="onMobileLinkUp($event, '#about')"
       >{{ texts().header.aboutLink }}</a
@@ -65,6 +66,7 @@
       #skillsLink
       class="mobile-nav__link"
       href="#skills"
+      (click)="onNavClick($event, '#skills')"
       (touchstart)="onMobileLinkDown($event, skillsLink)"
       (touchend)="onMobileLinkUp($event, '#skills')"
       >{{ texts().header.skillsLink }}</a
@@ -73,6 +75,7 @@
       #portfolioLink
       class="mobile-nav__link"
       href="#portfolio"
+      (click)="onNavClick($event, '#portfolio')"
       (touchstart)="onMobileLinkDown($event, portfolioLink)"
       (touchend)="onMobileLinkUp($event, '#portfolio')"
       >{{ texts().header.portfolioLink }}</a

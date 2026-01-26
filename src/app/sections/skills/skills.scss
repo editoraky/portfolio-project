@@ -1,7 +1,9 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
+
 .skills {
-  height: 100vh;
+  padding-top: clamp(80px, 10vw, 120px);
+  padding-bottom: clamp(80px, 10vw, 120px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,11 +13,11 @@
   @include tablet {
     padding: 0 $padding-horizontal-mobile;
     height: auto;
-    min-height: 100vh;
-    padding-top: 0px;
-    padding-bottom: 40px;
+    padding-top: clamp(60px, 10vw, 100px);
+    padding-bottom: clamp(60px, 10vw, 100px);
   }
 }
+
 .skills__container {
   width: 100%;
   max-width: 1200px;
@@ -27,6 +29,7 @@
     border-width: 4px;
   }
 }
+
 .skills__title {
   position: absolute;
   top: 0;
@@ -47,6 +50,7 @@
     color: $color-primary;
   }
 }
+
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -66,6 +70,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 .skills__item {
   display: flex;
   flex-direction: column;
@@ -115,6 +120,7 @@
     }
   }
 }
+
 @keyframes slideIcon {
   0% {
     transform: translateX(0) scale(1);
@@ -132,6 +138,7 @@
     transform: translateX(0) scale(1); // start position
   }
 }
+
 .skills__cta {
   display: flex;
   align-items: center;
@@ -145,6 +152,7 @@
     justify-content: center;
   }
 }
+
 .skills__cta-icon-wrapper {
   width: clamp(48px, 5vw, 64px);
   height: clamp(48px, 5vw, 64px);
@@ -160,6 +168,7 @@
     height: 64px;
   }
 }
+
 .skills__cta-icon {
   width: clamp(48px, 5vw, 64px);
   height: clamp(48px, 5vw, 64px);
@@ -168,6 +177,7 @@
     height: 64px;
   }
 }
+
 .skills__cta-text {
   display: flex;
   align-items: baseline;
@@ -179,6 +189,7 @@
     font-size: 18px;
   }
 }
+
 .skills__cta-link {
   color: $color-primary;
   font-weight: $font-weight-regular;
@@ -211,6 +222,7 @@
     }
   }
 }
+
 .skills__arrow {
   position: absolute;
   left: clamp(60px, 15vw, 140px);
@@ -250,6 +262,7 @@
     }
   }
 }
+
 @keyframes hideArrow {
   0% {
     opacity: 1;
@@ -272,11 +285,50 @@
     opacity: 0;
   }
 }
+
 @keyframes showArrow {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__arrow {
+    left: 10px;
+    bottom: -20px;
+    width: clamp(280px, 90vw, 320px);
+    height: auto;
+
+    img {
+      top: auto;
+      bottom: 0;
+      right: auto;
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills__arrow {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    align-self: flex-start;
+    margin-top: 24px;
+    margin-left: 16px;
+    width: clamp(80px, 25vw, 120px);
+    height: auto;
+    pointer-events: auto;
+
+    img {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: 100%;
+      height: auto;
+    }
   }
 }

@@ -2,26 +2,25 @@
 @use '../../../styles/mixins' as *;
 
 .about {
-  height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   position: relative;
   background-color: $color-background;
-  padding: 0 $padding-horizontal; // ← Esnek padding
-  padding-top: clamp(80px, 12vw, 120px); // ← Esnek top padding
+  padding: clamp(100px, 12vw, 150px) $padding-horizontal clamp(200px, 10vw, 240px);
   max-width: $max-content-width;
   margin: 0 auto;
-  gap: clamp(32px, 4vw, $spacing-xl); // ← Esnek gap
+  gap: clamp(32px, 4vw, $spacing-xl);
   overflow: visible;
 }
 
 .about__title {
   font-family: $font-heading;
   font-weight: $font-weight-extrabold;
-  font-size: clamp(56px, 6vw, 88px); // ← Esnek font
+  font-size: clamp(56px, 6vw, 88px);
   color: $color-text;
-  margin-bottom: clamp(24px, 4vw, $spacing-lg); // ← Esnek margin
+  margin-bottom: clamp(24px, 4vw, $spacing-lg);
   line-height: 1;
   white-space: nowrap;
   transition: color 0.3s ease;
@@ -37,7 +36,7 @@
 
 .about__content {
   flex: 1;
-  max-width: clamp(400px, 55%, 650px); // ← Esnek genişlik
+  max-width: clamp(400px, 55%, 650px);
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -49,12 +48,12 @@
 }
 
 .about__description {
-  margin-bottom: clamp(24px, 4vw, $spacing-lg); // ← Esnek margin
+  margin-bottom: clamp(24px, 4vw, $spacing-lg);
   max-width: 100%;
 }
 .about .about__description p {
   font-family: $font-body;
-  font-size: clamp(18px, 3vw, 22px); // ← Esnek font
+  font-size: clamp(18px, 3vw, 22px);
   font-weight: 550;
   line-height: 1.2;
   color: $color-text;
@@ -69,7 +68,7 @@
   display: flex;
   flex-direction: column;
   gap: $spacing-sm;
-  margin-bottom: clamp(24px, 4vw, $spacing-lg); // ← Esnek margin
+  margin-bottom: clamp(24px, 4vw, $spacing-lg);
 }
 
 .about__info-item {
@@ -79,7 +78,7 @@
 
   span {
     font-family: $font-body;
-    font-size: clamp(18px, 3vw, 22px); // ← Esnek font
+    font-size: clamp(18px, 3vw, 22px);
     font-weight: 500;
     color: $color-text;
   }
@@ -234,13 +233,12 @@
 @media (max-width: 768px) {
   .about {
     height: auto;
-    min-height: 100vh;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: -10px $padding-horizontal-mobile 10px;
+    padding: clamp(60px, 12vw, 100px) $padding-horizontal-mobile clamp(40px, 8vw, 80px);
     gap: 0;
-    margin-top: -15vh;
+    margin-top: 0;
   }
 
   .about__title {
@@ -338,16 +336,18 @@
     position: relative;
     right: auto;
     bottom: auto;
-    align-self: flex-start;
-    margin-top: clamp(70px, 17vw, 125px);
-    margin-left: clamp(-90%, -105vw, -90%);
+    align-self: flex-end;
+    margin-top: 24px;
+    margin-right: 16px;
     order: 4;
-    width: 150%;
-    height: 100px;
+    width: clamp(80px, 25vw, 120px);
+    height: auto;
 
     img {
       width: 100%;
       height: auto;
+      position: relative;
+      left: 0;
     }
   }
 }

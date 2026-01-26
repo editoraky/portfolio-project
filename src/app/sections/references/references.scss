@@ -2,9 +2,8 @@
 @use '../../../styles/mixins' as *;
 
 .references {
-  min-height: 100vh;
   background-color: $color-background;
-  padding: 100px $padding-horizontal;
+  padding: clamp(80px, 10vw, 120px) $padding-horizontal;
 
   .container {
     display: flex;
@@ -295,10 +294,10 @@
 
   .references__arrow {
     position: relative;
-    align-self: flex-start;
-    margin-top: clamp(60px, 15vw, 120px);
-    margin-left: clamp(-85%, -90vw, -80%);
-    width: 170%;
+    align-self: flex-end;
+    margin-top: 24px;
+    margin-right: 16px;
+    width: clamp(80px, 25vw, 120px);
     height: auto;
 
     img {

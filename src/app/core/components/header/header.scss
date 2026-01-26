@@ -197,10 +197,14 @@
     @include flex-column;
     justify-content: flex-start;
     align-items: center;
-    height: 100%;
-    padding-top: 10vh;
-    gap: clamp(32px, 5vw, 48px);
+    height: auto;
+    padding-top: 15vh;
+    padding-bottom: 35vh;
+    gap: clamp(2px, 1vw, 15px);
+    position: relative;
+    z-index: 2;
   }
+
   &__link {
     position: relative;
     font-family: $font-heading;
@@ -268,7 +272,7 @@
 
 .mobile-nav__contact {
   position: absolute;
-  bottom: -70px;
+  bottom: -50px;
   left: 0;
   width: 100%;
   height: auto;
@@ -281,12 +285,12 @@
 
   &-content {
     position: absolute;
-    bottom: 30px;
+    bottom: 22px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: $max-content-width;
-    padding: 40px $padding-horizontal;
+    padding: 32px $padding-horizontal 50px;
     @include flex-between;
     align-items: flex-end;
   }
@@ -361,14 +365,18 @@
       bottom: auto;
       left: auto;
       transform: none;
-      padding: 60px $padding-horizontal-mobile 40px;
+      padding: 60px $padding-horizontal-mobile 60px;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0px;
+      gap: 16px;
+    }
+
+    .mobile-nav__contact-icon {
+      margin-top: 8px;
     }
 
     .mobile-nav__icon {
-      display: none;
+      display: flex;
     }
   }
   .mobile-nav__sayhi {
@@ -446,5 +454,70 @@
       left: 50% !important;
       transition: all 0.15s ease-out !important;
     }
+  }
+
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding-top: 8px;
+    height: 80px;
+  }
+
+  .header__logo-img {
+    height: 48px;
+  }
+
+  .header__nav {
+    gap: 16px;
+  }
+
+  .header__menu-btn {
+    width: 48px;
+    height: 48px;
+    gap: 10px;
+  }
+
+  .header__menu-line {
+    width: 32px;
+    height: 3px;
+  }
+
+  .header__menu-btn.open {
+    .header__menu-line:nth-child(1) {
+      transform: translateY(13px) rotate(45deg);
+    }
+    .header__menu-line:nth-child(3) {
+      transform: translateY(-13px) rotate(-45deg);
+    }
+  }
+
+  .header__language-mobile .header__language-btn {
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+
+  .mobile-nav__link {
+    width: clamp(200px, 90vw, 300px);
+    font-size: clamp(32px, 10vw, 48px);
+  }
+
+  .mobile-nav__email {
+    font-size: 12px;
+    word-break: break-all;
+    max-width: 180px;
+  }
+
+  .mobile-nav__sayhi {
+    font-size: clamp(28px, 10vw, 36px);
+  }
+
+  .mobile-nav__contact-icon {
+    gap: 12px;
+  }
+
+  .mobile-nav__icon img {
+    width: 24px;
+    height: 24px;
   }
 }
