@@ -83,16 +83,16 @@ export const TRANSLATIONS = {
       de: 'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.',
     },
     project1Desc: {
+      en: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      de: 'Vom Kanban-System inspirierter Aufgabenmanager. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
+    },
+    project2Desc: {
       en: 'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe find coins and salsa bottles to fight against the killer chicken.',
       de: 'Ein einfaches Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa-Flaschen zu finden, um gegen das Killer-Huhn zu kämpfen.',
     },
-    project2Desc: {
+    project3Desc: {
       en: 'Based on the PokéAPI, a simple library that provides and catalogues Pokémon information.',
       de: 'Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.',
-    },
-    project3Desc: {
-      en: 'A Slack-inspired chat application with real-time messaging, channels, and direct messages.',
-      de: 'Eine von Slack inspirierte Chat-Anwendung mit Echtzeit-Nachrichten, Kanälen und Direktnachrichten.',
     },
   },
   contact: {
