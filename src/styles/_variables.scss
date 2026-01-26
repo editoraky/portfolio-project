@@ -1,20 +1,20 @@
 $color-primary: #00bc8f;
-$color-background: #fffcf3; // Creme-Hintergrund der Seite
-$color-background-dark: #000000; // Dunkler Footer-Hintergrund
-$color-text: #000000; // Haupttext (Schwarz)
-$color-text-light: #fffcf3; // Text auf dunklem Hintergrund
+$color-background: #fffcf3;
+$color-background-dark: #000000;
+$color-text: #000000;
+$color-text-light: #fffcf3;
 $font-heading: 'Syne', sans-serif;
 $font-body: 'Overpass', sans-serif;
-$font-size-hero: 96px; // "Frontend Developer" Haupttitel
-$font-size-h1: 64px; // Sektions-Überschriften
-$font-size-h2: 32px; // Unter-Überschriften
-$font-size-h3: 24px; // Kleine Überschriften
-$font-size-body: 18px; // Normaler Text
-$font-size-small: 16px; // Kleinerer Text
+$font-size-hero: 96px;
+$font-size-h1: 64px;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
+$font-size-body: 18px;
+$font-size-small: 16px;
 
-$font-weight-regular: 400; // Overpass normal
-$font-weight-bold: 700; // Syne bold (Monate/Jahre)
-$font-weight-extrabold: 800; // Syne extrabold (Überschriften)
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
 
 $spacing-xs: 8px;
 $spacing-sm: 16px;
@@ -22,8 +22,8 @@ $spacing-md: 24px;
 $spacing-lg: 48px;
 $spacing-xl: 96px;
 $max-content-width: 1440px;
-$padding-horizontal: 80px; // Desktop
-$padding-horizontal-mobile: 10px; // Mobile
+$padding-horizontal: 80px;
+$padding-horizontal-mobile: 10px;
 $transition-fast: 75ms ease-in-out;
 $transition-normal: 125ms ease-in-out;
 

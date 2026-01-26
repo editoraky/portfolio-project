@@ -84,16 +84,16 @@
 }
 
 .about__info-icon {
-  width: clamp(40px, 3vw, 48px); // ← Esnek icon
+  width: clamp(40px, 3vw, 48px);
   height: clamp(40px, 3vw, 48px);
   filter: brightness(0);
 }
 
 .about__button {
   display: inline-block;
-  padding: clamp(14px, 2vw, 16px) clamp(64px, 3vw, 88px); // ← Esnek padding
+  padding: clamp(14px, 2vw, 16px) clamp(64px, 3vw, 88px);
   font-family: $font-body;
-  font-size: clamp(24px, 2vw, 26px); // ← Esnek font
+  font-size: clamp(24px, 2vw, 26px);
   font-weight: 400;
   color: $color-text;
   text-decoration: none;
@@ -101,7 +101,7 @@
   background: transparent;
   cursor: pointer;
   align-self: center;
-  margin-left: clamp(100px, 5%, 50px); // ← E snek margin
+  margin-left: clamp(100px, 5%, 50px);
   transition: all 0.125s ease;
 
   &:hover {
@@ -115,7 +115,7 @@
   flex-shrink: 1;
   align-self: flex-start;
   margin-top: clamp(100px, 12vw, 140px);
-  width: clamp(280px, 45vw, 380px); // ← Esnek genişlik
+  width: clamp(280px, 45vw, 380px);
   margin-right: 20px;
 }
 
@@ -125,9 +125,9 @@
 }
 
 .about__image {
-  width: 100%; // ← %100 wrapper'a göre
+  width: 100%;
   height: auto;
-  aspect-ratio: 4/5; // ← Oran koruma
+  aspect-ratio: 4/5;
   object-fit: cover;
   display: block;
   position: relative;
@@ -136,11 +136,11 @@
 
 .about__image-frame {
   position: absolute;
-  top: clamp(15px, 2vw, 20px); // ← Esnek pozisyon
+  top: clamp(15px, 2vw, 20px);
   left: clamp(15px, 2vw, 20px);
   width: 100%;
   height: 100%;
-  border: 5px solid $color-text; // ← Esnek border
+  border: 5px solid $color-text;
   z-index: 2;
   opacity: 0;
   transition: opacity 0.125s ease;
@@ -351,7 +351,7 @@
 @media (max-width: 768px) and (hover: none) {
   .about__button {
     &:hover {
-      padding: clamp(20px, 6vw, 22px) clamp(80px, 20vw, 120px); // ← Aynı boyut
+      padding: clamp(20px, 6vw, 22px) clamp(80px, 20vw, 120px);
       background-color: transparent;
       color: $color-text;
     }

@@ -423,13 +423,13 @@
   }
   @keyframes blink {
     0% {
-      color: $color-primary; // Yeşil başla
+      color: $color-primary;
     }
     60% {
-      color: $color-primary; // Yeşil devam
+      color: $color-primary;
     }
     60.1% {
-      color: $color-background; // Beyaz/krem geçiş
+      color: $color-background;
     }
     100% {
       color: $color-background;
@@ -469,12 +469,12 @@
   }
 
   .contact__form-title {
-    font-size: clamp(24px, 7vw, 32px); // Daha büyük
+    font-size: clamp(24px, 7vw, 32px);
     text-align: center;
   }
 
   .contact__form-subtitle {
-    font-size: clamp(16px, 5vw, 22px); // Daha büyük
+    font-size: clamp(16px, 5vw, 22px);
     text-align: center;
   }
 

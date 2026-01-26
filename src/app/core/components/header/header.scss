@@ -91,7 +91,7 @@
 }
 
 .header__language-mobile {
-  display: none !important; // Desktop'ta kesinlikle gizli
+  display: none !important;
   gap: 7px;
 
   .header__language-btn {
@@ -408,13 +408,13 @@
     padding: 2px 4px;
     &::before {
       left: -10px !important;
-      width: 5px !important; //dikey cizgi kalınlığı
+      width: 5px !important;
     }
 
     &::after {
       left: -10px !important;
       width: 10% !important;
-      height: 5px !important; //yatay cizgi kalınlığı
+      height: 5px !important;
     }
     &:hover::before {
       opacity: 1 !important;

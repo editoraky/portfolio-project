@@ -19,7 +19,7 @@
   &__inner {
     position: relative;
     width: 100%;
-    max-width: $max-content-width; // Content sınırı
+    max-width: $max-content-width;
     height: 100%;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@
   }
   &__email {
     position: absolute;
-    left: 30px; // Inner'ın sol kenarından
+    left: 30px;
     bottom: 10%;
     transform: rotate(-90deg);
     transform-origin: left center;
