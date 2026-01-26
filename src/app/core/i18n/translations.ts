@@ -128,9 +128,13 @@ export const TRANSLATIONS = {
       en: 'Your name is required',
       de: 'Ihr Name ist erforderlich',
     },
-    errorEmail: {
-      en: 'Your email is required',
-      de: 'Ihre E-Mail ist erforderlich',
+    errorEmailRequired: {
+      en: 'Email address is required',
+      de: 'E-Mail-Adresse ist erforderlich',
+    },
+    errorEmailInvalid: {
+      en: 'Email address is not valid',
+      de: 'E-Mail-Adresse ist nicht gültig',
     },
     errorMessage: {
       en: 'Your message is required',

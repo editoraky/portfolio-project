@@ -57,9 +57,12 @@
             <span class="contact__input-icon contact__input-icon--success" *ngIf="emailSuccess">
               <img src="assets/icon/done.svg" alt="Success" />
             </span>
-            <span class="contact__error-message" *ngIf="emailError">{{
-              texts().contact.errorEmail
-            }}</span>
+            <span class="contact__error-message" *ngIf="emailError && emailErrorType === 'required'">
+              {{ texts().contact.errorEmailRequired }}
+            </span>
+            <span class="contact__error-message" *ngIf="emailError && emailErrorType === 'invalid'">
+              {{ texts().contact.errorEmailInvalid }}
+            </span>
           </div>
           <div
             class="contact__input-group contact__input-group--textarea"

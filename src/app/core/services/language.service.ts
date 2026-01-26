@@ -38,7 +38,8 @@ export interface TranslatedTexts {
     labelEmail: string;
     labelMessage: string;
     errorName: string;
-    errorEmail: string;
+    errorEmailRequired: string;
+    errorEmailInvalid: string;
     errorMessage: string;
     privacyText1: string;
     privacyLink: string;
@@ -131,7 +132,8 @@ export class LanguageService {
         labelEmail: TRANSLATIONS.contact.labelEmail[lang],
         labelMessage: TRANSLATIONS.contact.labelMessage[lang],
         errorName: TRANSLATIONS.contact.errorName[lang],
-        errorEmail: TRANSLATIONS.contact.errorEmail[lang],
+        errorEmailRequired: TRANSLATIONS.contact.errorEmailRequired[lang],
+        errorEmailInvalid: TRANSLATIONS.contact.errorEmailInvalid[lang],
         errorMessage: TRANSLATIONS.contact.errorMessage[lang],
         privacyText1: TRANSLATIONS.contact.privacyText1[lang],
         privacyLink: TRANSLATIONS.contact.privacyLink[lang],

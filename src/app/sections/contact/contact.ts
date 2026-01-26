@@ -23,6 +23,7 @@ export class ContactComponent implements OnInit {
   };
   nameError = false;
   emailError = false;
+  emailErrorType: 'required' | 'invalid' | null = null;
   messageError = false;
   privacyError = false;
   nameSuccess = false;
@@ -91,11 +92,18 @@ export class ContactComponent implements OnInit {
 
   validateEmail() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (this.formData.email.trim() === '' || !emailRegex.test(this.formData.email)) {
+    const email = this.formData.email.trim();
+    if (email === '') {
       this.emailError = true;
+      this.emailErrorType = 'required';
+      this.emailSuccess = false;
+    } else if (!emailRegex.test(email)) {
+      this.emailError = true;
+      this.emailErrorType = 'invalid';
       this.emailSuccess = false;
     } else {
       this.emailError = false;
+      this.emailErrorType = null;
       this.emailSuccess = true;
     }
   }
