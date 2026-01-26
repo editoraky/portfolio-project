@@ -2,12 +2,15 @@
 @use '../../../styles/mixins' as *;
 
 .skills {
+  height: auto;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   background-color: $color-background;
-  padding: clamp(80px, 10vw, 120px) $padding-horizontal;
+  padding: clamp(80px, 10vw, 120px) $padding-horizontal clamp(150px, 20vw, 200px);
+  overflow: visible;
   @include tablet {
     padding: clamp(60px, 10vw, 100px) $padding-horizontal-mobile;
   }
@@ -219,20 +222,19 @@
 
 .skills__arrow {
   position: absolute;
-  left: clamp(60px, 15vw, 140px);
-  bottom: 10px;
-  width: clamp(420px, 16vw, 460px);
-  height: clamp(420px, 16vw, 460px);
-  pointer-events: none;
+  left: clamp(40px, 12vw, 100px);
+  bottom: -200px;
+  width: clamp(250px, 40vw, 460px);
+  height: clamp(250px, 40vw, 460px);
+  z-index: 10;
   img {
     position: absolute;
     width: 100%;
     height: auto;
-    top: 450px;
     bottom: 0;
-    right: 35px;
-    pointer-events: auto;
+    left: -35px;
   }
+
   .skills-1 {
     opacity: 1;
   }
