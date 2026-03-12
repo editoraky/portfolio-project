@@ -102,6 +102,7 @@
 .portfolio__image-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: clamp(40px, 6vw, 80px);
 
   @include tablet {
@@ -294,7 +295,8 @@
 
 .portfolio__button {
   display: inline-block;
-  padding: clamp(14px, 2vw, 16px) clamp(48px, 4vw, 64px);
+  white-space: nowrap;
+  padding: clamp(10px, 1vw, 14px) clamp(24px, 2vw, 40px);
   font-family: $font-body;
   font-size: $font-size-body;
   font-weight: $font-weight-regular;
@@ -307,8 +309,8 @@
   align-self: flex-start;
 
   &:hover {
-    padding-left: clamp(64px, 6vw, 96px);
-    padding-right: clamp(64px, 6vw, 96px);
+    padding-left: clamp(32px, 4vw, 56px);
+    padding-right: clamp(32px, 4vw, 56px);
     font-weight: $font-weight-bold;
   }
 
@@ -325,8 +327,13 @@
   display: flex;
   gap: 16px;
 
+    .portfolio__button {
+      flex: 1;
+      text-align: center;
+    }
+
   @include tablet {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 12px;
   }
