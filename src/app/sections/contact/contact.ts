@@ -44,39 +44,62 @@ export class ContactComponent implements OnInit {
   isSubmitting = false;
   isMobile: boolean = false;
 
+  /**
+   * Checks if the entire form is valid and ready for submission.
+   * @returns True when all fields pass validation and privacy is accepted
+   */
   get isFormValid(): boolean {
     return this.nameSuccess && this.emailSuccess && this.messageSuccess && this.formData.privacy;
   }
 
+  /**
+   * Returns the appropriate contact section title based on screen size.
+   * @returns Mobile or desktop version of the title string
+   */
   get contactTitle(): string {
     const t = this.texts();
     return this.isMobile ? t.contact.titleMobile : t.contact.title;
   }
 
+  /**
+   * Returns the appropriate submit button text based on screen size.
+   * @returns Mobile or desktop version of the button label
+   */
   get submitButtonText(): string {
     const t = this.texts();
     return this.isMobile ? t.contact.submitButtonMobile : t.contact.submitButton;
   }
 
+  /** Initializes the component by checking the current screen size */
   ngOnInit() {
     this.checkScreenSize();
   }
 
+  /** Recalculates screen size when the browser window is resized */
   @HostListener('window:resize')
   onResize() {
     this.checkScreenSize();
   }
 
+  /** Updates the isMobile flag based on the current viewport width */
   checkScreenSize() {
     this.isMobile = window.innerWidth <= 768;
   }
 
+  /**
+   * Handles hover state for the privacy checkbox (desktop only).
+   * @param isHovering - Whether the mouse is currently over the checkbox
+   */
   onCheckboxHover(isHovering: boolean) {
     if (!this.isMobile) {
       this.privacyHover = isHovering;
     }
   }
 
+  /**
+   * Placeholder for future focus behavior on form fields.
+   * @param field - The name of the focused field
+   */
   onFocus(field: string) {}
 
   /**
@@ -97,6 +120,7 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  /** Validates the name field — sets error if empty, success if filled */
   validateName() {
     if (this.formData.name.trim() === '') {
       this.nameError = true;
@@ -129,6 +153,7 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  /** Validates the message field — sets error if empty, success if filled */
   validateMessage() {
     if (this.formData.message.trim() === '') {
       this.messageError = true;
@@ -139,6 +164,7 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  /** Toggles the privacy checkbox state and clears its error */
   togglePrivacy() {
     this.formData.privacy = !this.formData.privacy;
     this.privacyError = false;
@@ -181,10 +207,12 @@ export class ContactComponent implements OnInit {
     this.isSubmitting = false;
   }
 
+  /** Hides the success modal after the user acknowledges it */
   closeModal() {
     this.showSuccessModal = false;
   }
 
+  /** Resets all form fields to empty values and clears success states */
   resetForm() {
     this.formData = {
       name: '',
