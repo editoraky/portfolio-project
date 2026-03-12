@@ -83,10 +83,14 @@
       </p>
     </div>
 
-    <a href="#portfolio" class="skills__arrow">
-      <img src="assets/icon/arrow-right1.svg" alt="" class="skills__arrow-1" />
-      <img src="assets/icon/arrow-right2.svg" alt="" class="skills__arrow-2" />
-      <img src="assets/icon/arrow-right3.svg" alt="" class="skills__arrow-3" />
-    </a>
+    <a href="#portfolio" class="skills__arrow" [class.animate]="isMobile && arrowAnimated">
+  @if (isMobile) {
+    <img src="assets/icon/arrow-right.svg" alt="" class="skills__arrow-mobile" />
+  } @else {
+    <img src="assets/icon/arrow-right1.svg" alt="" class="skills__arrow-1" />
+    <img src="assets/icon/arrow-right2.svg" alt="" class="skills__arrow-2" />
+    <img src="assets/icon/arrow-right3.svg" alt="" class="skills__arrow-3" />
+  }
+</a>
   </div>
 </section>

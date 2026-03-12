@@ -1,9 +1,18 @@
+/**
+ * @fileoverview Contact section component for the portfolio website.
+ * Provides a contact form with validation and email submission functionality.
+ */
+
 import { Component, OnInit, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../core/services/language.service';
 
+/**
+ * Contact form component with real-time validation and email submission.
+ * Supports responsive layout with different text for mobile/desktop views.
+ */
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -21,6 +30,7 @@ export class ContactComponent implements OnInit {
     message: '',
     privacy: false,
   };
+
   nameError = false;
   emailError = false;
   emailErrorType: 'required' | 'invalid' | null = null;
@@ -33,13 +43,16 @@ export class ContactComponent implements OnInit {
   showSuccessModal = false;
   isSubmitting = false;
   isMobile: boolean = false;
+
   get isFormValid(): boolean {
     return this.nameSuccess && this.emailSuccess && this.messageSuccess && this.formData.privacy;
   }
+
   get contactTitle(): string {
     const t = this.texts();
     return this.isMobile ? t.contact.titleMobile : t.contact.title;
   }
+
   get submitButtonText(): string {
     const t = this.texts();
     return this.isMobile ? t.contact.submitButtonMobile : t.contact.submitButton;
@@ -66,6 +79,10 @@ export class ContactComponent implements OnInit {
 
   onFocus(field: string) {}
 
+  /**
+   * Validates the specified field when it loses focus.
+   * @param field - The field name to validate ('name', 'email', or 'message')
+   */
   onBlur(field: string) {
     switch (field) {
       case 'name':
@@ -90,6 +107,10 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  /**
+   * Validates email format using regex pattern.
+   * Sets appropriate error type for required or invalid format.
+   */
   validateEmail() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const email = this.formData.email.trim();
@@ -123,6 +144,10 @@ export class ContactComponent implements OnInit {
     this.privacyError = false;
   }
 
+  /**
+   * Handles form submission after validating all fields.
+   * Sends email if form is valid.
+   */
   async onSubmit() {
     this.validateName();
     this.validateEmail();
@@ -135,6 +160,10 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  /**
+   * Sends form data to backend PHP script.
+   * Shows success modal and resets form on successful submission.
+   */
   async sendEmail() {
     try {
       const response = await fetch('send-mail.php', {

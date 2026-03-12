@@ -30,10 +30,14 @@
         <p class="references__text">{{ texts().references.testimonial3 }}</p>
       </div>
     </div>
-    <a href="#contact" class="references__arrow">
-      <img src="assets/icon/arrow-left1.svg" alt="" class="references__arrow-1" />
-      <img src="assets/icon/arrow-left2.svg" alt="" class="references__arrow-2" />
-      <img src="assets/icon/arrow-left3.svg" alt="" class="references__arrow-3" />
-    </a>
+    <a href="#contact" class="references__arrow" [class.animate]="isMobile && arrowAnimated">
+      @if (isMobile) {
+    <img src="assets/icon/arrow-left.svg" alt="" class="references__arrow-mobile" />
+      } @else {
+    <img src="assets/icon/arrow-left1.svg" alt="" class="references__arrow-1" />
+    <img src="assets/icon/arrow-left2.svg" alt="" class="references__arrow-2" />
+    <img src="assets/icon/arrow-left3.svg" alt="" class="references__arrow-3" />
+  }
+</a>
   </div>
 </section>

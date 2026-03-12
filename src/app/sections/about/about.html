@@ -30,9 +30,13 @@
       <img src="assets/images/ak-square-bw.jpeg" alt="Akin Külhanbey" class="about__image" />
     </div>
   </div>
-  <a href="#skills" class="about__arrow">
+  <a href="#skills" class="about__arrow" [class.animate]="isMobile && arrowAnimated">
+  @if (isMobile) {
+    <img src="assets/icon/arrow-left.svg" alt="" class="about__arrow-mobile" />
+  } @else {
     <img src="assets/icon/arrow-left1.svg" alt="" class="about__arrow-1" />
     <img src="assets/icon/arrow-left2.svg" alt="" class="about__arrow-2" />
     <img src="assets/icon/arrow-left3.svg" alt="" class="about__arrow-3" />
-  </a>
+  }
+</a>
 </section>
