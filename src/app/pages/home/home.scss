@@ -32,11 +32,11 @@
   &__email {
     position: absolute;
     left: 30px;
-    bottom: 10%;
+    bottom: 1%;
     transform: rotate(-90deg);
     transform-origin: left center;
-    font-family: $font-body;
-    font-size: $font-size-body;
+    font-size: 20px;
+    font-weight: 300;
     color: $color-text;
     text-decoration: none;
     letter-spacing: 0.05em;
@@ -47,20 +47,23 @@
     }
 
     @include tablet {
-      left: 16px;
-      bottom: 25%;
+      left: 30px;
+      bottom: 15%;
       font-size: $font-size-small;
-      transform-origin: left bottom;
+      transform-origin: left center;
     }
     @media (max-width: 480px) {
-      left: 12px;
-      bottom: 25%;
-      font-size: 12px;
+      left: 20px;
+      bottom: 15%;
+      font-size: 16px;
     }
     @media (max-width: 375px) {
-      left: 10px;
-      bottom: 29%;
-      font-size: 11px;
+      left: 20px;
+      bottom: 15%;
+      font-size: 16px;
+    }
+    @media (min-width: 769px) and (max-width: 1280px) {
+      font-size: 18px;
     }
   }
   &__content {
@@ -80,7 +83,7 @@
   &__title {
     font-family: $font-heading;
     font-weight: $font-weight-extrabold;
-    font-size: clamp(32px, 11vw, 120px);
+    font-size: clamp(32px, 11vw, 128px);
     line-height: 1;
     color: $color-text;
     letter-spacing: -0.02em;
@@ -118,7 +121,7 @@
 
   &__name {
     font-family: $font-body;
-    font-size: clamp(18px, 5vw, 42px);
+    font-size: clamp(18px, 5vw, 48px);
     font-weight: $font-weight-extrabold;
     color: $color-primary;
     white-space: nowrap;
@@ -201,3 +204,4 @@
     transform: translateX(0);
   }
 }
+

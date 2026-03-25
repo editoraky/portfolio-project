@@ -56,7 +56,7 @@ export const TRANSLATIONS = {
     },
     button: {
       en: "Let's talk",
-      de: 'Lass Sie uns reden',
+      de: 'Lassen Sie uns reden',
     },
   },
   skills: {

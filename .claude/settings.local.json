@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp bugfixes/skills.scss src/app/sections/skills/skills.scss)",
+      "Bash(cp bugfixes/home.scss src/app/pages/home/home.scss)",
+      "Bash(cp bugfixes/portfolio.scss src/app/sections/portfolio/portfolio.scss)",
+      "Bash(cp bugfixes/references.scss src/app/sections/references/references.scss)",
+      "Bash(cp bugfixes/footer.scss src/app/core/components/footer/footer.scss)"
+    ]
+  }
+}

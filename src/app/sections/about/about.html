@@ -30,7 +30,7 @@
       <img src="assets/images/ak-square-bw.jpeg" alt="Akin Külhanbey" class="about__image" />
     </div>
   </div>
-  <a href="#skills" class="about__arrow" [class.animate]="isMobile && arrowAnimated">
+  <a href="#skills" class="about__arrow" [class.animate]="isMobile && arrowAnimated" (click)="onArrowClick($event, '#skills')">
   @if (isMobile) {
     <img src="assets/icon/arrow-left.svg" alt="" class="about__arrow-mobile" />
   } @else {

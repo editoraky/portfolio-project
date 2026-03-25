@@ -168,4 +168,19 @@ export class AboutComponent implements OnInit, OnDestroy, AfterViewInit {
       this.arrowObserver.observe(arrowElement);
     }
   }
+
+
+  /**
+  * Handles arrow click navigation with smooth scroll behavior.
+  * Prevents default anchor behavior and scrolls to the target section.
+  * @param event - The click event
+  * @param targetId - The target section ID to scroll to (e.g. '#skills')
+  */
+onArrowClick(event: Event, targetId: string): void {
+  event.preventDefault();
+  const target = document.querySelector(targetId);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 }

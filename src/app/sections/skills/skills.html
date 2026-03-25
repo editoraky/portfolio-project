@@ -83,7 +83,7 @@
       </p>
     </div>
 
-    <a href="#portfolio" class="skills__arrow" [class.animate]="isMobile && arrowAnimated">
+    <a href="#portfolio" class="skills__arrow" [class.animate]="isMobile && arrowAnimated" (click)="onArrowClick($event, '#portfolio')">
   @if (isMobile) {
     <img src="assets/icon/arrow-right.svg" alt="" class="skills__arrow-mobile" />
   } @else {

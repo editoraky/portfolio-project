@@ -32,7 +32,7 @@
   font-family: $font-heading;
   font-weight: $font-weight-extrabold;
   font-style: italic;
-  font-size: clamp(48px, 8vw, 96px);
+  font-size: clamp(48px, 8vw, 78px);
   color: $color-text;
   margin-bottom: $spacing-md;
   transition: color 0.3s ease;
@@ -48,7 +48,7 @@
 
 .references__subtitle {
   font-family: $font-body;
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: 22px;
   font-weight: $font-weight-regular;
   color: $color-text;
   max-width: 500px;
@@ -225,19 +225,21 @@
   }
 
   .references__header {
-    text-align: left;
+    text-align: center;
     margin-bottom: $spacing-lg;
     width: 100%;
   }
 
   .references__title {
-    font-size: clamp(32px, 10vw, 56px);
+    font-size: 36px;
     word-wrap: break-word;
   }
 
   .references__subtitle {
     margin: 0;
     max-width: 100%;
+    text-align: left;
+    font-size: 20px;
   }
 
   .references__cards {
@@ -279,7 +281,7 @@
   }
 
   .references__name {
-    font-size: clamp(18px, 5vw, 24px);
+    font-size: 22px;
   }
 
   .references__role {
@@ -289,7 +291,7 @@
 
   .references__text {
     text-align: center;
-    font-size: clamp(14px, 3.8vw, 16px);
+    font-size: 18px;
     line-height: 1.4;
   }
 
