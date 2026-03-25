@@ -340,8 +340,8 @@
     align-self: center;
     margin-top: clamp(16px, 4vw, 24px);
     order: 4;
-    width: 220px !important;
-    height: 220px !important;
+    width: 150px !important;
+    height: 150px !important;
 
     img {
       width: 100% !important;
@@ -397,17 +397,17 @@
   }
 
   .about__title {
-    font-size: clamp(24px, 9vw, 36px);
+    font-size: clamp(28px, 8vw, 36px);
     white-space: nowrap;
     text-align: center;
     width: 100%;
   }
 
-  .about__content {
-    padding-left: 16px;
-  }
   .about .about__description p {
     font-size: 18px;
+    text-align: left;
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   .about__info-item {

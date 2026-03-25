@@ -232,7 +232,6 @@
 
   .references__title {
     font-size: 36px;
-    word-wrap: break-word;
   }
 
   .references__subtitle {
@@ -351,8 +350,17 @@
     margin-top: 24px;
   }
 
+   .references__title {
+    font-size: 30px;
+  }
+
   .references__card {
     padding: 12px;
+  }
+
+  .references__subtitle {
+    text-align: justify;
+    hyphens: auto;
   }
 
   .references__text {

@@ -198,11 +198,9 @@
   color: $color-primary;
   font-weight: $font-weight-regular;
   text-decoration: none;
-  margin: 0 4px;
-  margin-left: 10px;
-  margin-right: 15px;
   position: relative;
   vertical-align: baseline;
+  z-index: 11;
 
   &::after {
     content: '';
